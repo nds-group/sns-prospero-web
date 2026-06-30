@@ -1,0 +1,181 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Deliverables Hub - PROSPERO">
+    <section class="relative pt-32 pb-section-padding overflow-hidden bg-surface border-b border-glass-stroke">
+        <div class="absolute inset-0 bg-6g-pattern opacity-50 z-0"></div>
+        <div class="max-w-container-max mx-auto px-8 relative z-10 text-center">
+            <h1 class="font-display-lg text-display-lg tracking-tight text-sovereign-blue mb-stack-md">
+                Project Deliverables
+            </h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mt-6 bg-surface-container-lowest/70 backdrop-blur-sm p-6 rounded-xl border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+                The implementation plan of PROSPERO is systematically divided into 5 dedicated Work Packages (WPs). These encompass technology-oriented research, overarching management frameworks, and strategic communication to ensure transparent progress toward European 6G sovereignty.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-section-padding px-8 bg-surface-container-lowest">
+        <div class="max-w-container-max mx-auto">
+            <!-- Tabs -->
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-stack-lg" id="wp-tabs">
+                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-primary transition-all wp-btn active shadow-sm group hover:-translate-y-1" data-wp="wp1">
+                    <div class="bg-eco-surface p-2 rounded-lg text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined">corporate_fare</span>
+                    </div>
+                    <div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP1</span>
+                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Project Management</h3>
+                    </div>
+                </button>
+                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp2">
+                    <div class="bg-surface-variant p-2 rounded-lg text-on-surface-variant mb-4 group-hover:bg-primary group-hover:text-white transition-colors icon-container">
+                        <span class="material-symbols-outlined">hub</span>
+                    </div>
+                    <div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP2</span>
+                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Network Intelligence</h3>
+                    </div>
+                </button>
+                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp3">
+                    <div class="bg-surface-variant p-2 rounded-lg text-on-surface-variant mb-4 group-hover:bg-primary group-hover:text-white transition-colors icon-container">
+                        <span class="material-symbols-outlined">memory</span>
+                    </div>
+                    <div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP3</span>
+                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Compute Continuum</h3>
+                    </div>
+                </button>
+                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp4">
+                    <div class="bg-surface-variant p-2 rounded-lg text-on-surface-variant mb-4 group-hover:bg-primary group-hover:text-white transition-colors icon-container">
+                        <span class="material-symbols-outlined">build</span>
+                    </div>
+                    <div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP4</span>
+                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Implementation</h3>
+                    </div>
+                </button>
+                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp5">
+                    <div class="bg-surface-variant p-2 rounded-lg text-on-surface-variant mb-4 group-hover:bg-primary group-hover:text-white transition-colors icon-container">
+                        <span class="material-symbols-outlined">campaign</span>
+                    </div>
+                    <div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP5</span>
+                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Communication</h3>
+                    </div>
+                </button>
+            </div>
+
+            <!-- Content Area -->
+            <div class="bg-white rounded-xl shadow-[0_4px_30px_rgba(0,0,0,0.05)] border border-glass-stroke p-8">
+                <h2 id="wp-title" class="font-headline-md text-headline-md text-primary mb-stack-md">WP1: Project Management</h2>
+                
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-surface text-on-surface-variant font-label-sm text-label-sm">
+                                <th class="py-4 px-6 font-semibold border-b border-surface-variant rounded-tl-lg">ID</th>
+                                <th class="py-4 px-6 font-semibold border-b border-surface-variant">Deliverable Name</th>
+                                <th class="py-4 px-6 font-semibold border-b border-surface-variant">Date</th>
+                                <th class="py-4 px-6 font-semibold border-b border-surface-variant">Status</th>
+                                <th class="py-4 px-6 font-semibold border-b border-surface-variant rounded-tr-lg">Access</th>
+                            </tr>
+                        </thead>
+                        <tbody id="deliverables-body" class="divide-y divide-surface-variant font-body-md text-body-md text-on-background">
+                            <tr>
+                                <td colspan="5" class="py-8 text-center text-on-surface-variant">Loading deliverables...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let deliverablesData = {};
+
+        async function fetchDeliverables() {
+            try {
+                const response = await fetch('/data.json');
+                const data = await response.json();
+                deliverablesData = data.deliverables || {};
+                renderWP('wp1');
+            } catch (error) {
+                console.error("Error loading deliverables", error);
+            }
+        }
+
+        function renderWP(wpId) {
+            const tbody = document.getElementById('deliverables-body');
+            const title = document.getElementById('wp-title');
+            
+            const wpInfo = {
+                'wp1': { title: 'WP1: Project Management', icon: 'corporate_fare' },
+                'wp2': { title: 'WP2: Network Intelligence', icon: 'hub' },
+                'wp3': { title: 'WP3: Compute Continuum', icon: 'memory' },
+                'wp4': { title: 'WP4: Implementation', icon: 'build' },
+                'wp5': { title: 'WP5: Communication', icon: 'campaign' }
+            };
+            
+            if(title && wpInfo[wpId]) {
+                title.innerHTML = `<span class="material-symbols-outlined text-secondary mr-3 align-middle text-[32px]">${wpInfo[wpId].icon}</span><span class="align-middle">${wpInfo[wpId].title}</span>`;
+            }
+
+            const items = deliverablesData[wpId] || [];
+            if (items.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="5" class="py-8 text-center text-on-surface-variant">No deliverables available for this Work Package yet.</td></tr>';
+                return;
+            }
+
+            let html = '';
+            items.forEach(item => {
+                const statusColor = item.status === 'Completed' ? 'bg-eco-surface text-primary' : 'bg-surface-variant text-earth-slate';
+                html += `
+                    <tr class="hover:bg-surface transition-colors">
+                        <td class="py-4 px-6 font-bold text-sovereign-blue">${item.id}</td>
+                        <td class="py-4 px-6">${item.name}</td>
+                        <td class="py-4 px-6">${item.date}</td>
+                        <td class="py-4 px-6">
+                            <span class="px-3 py-1 rounded-full text-xs font-bold ${statusColor}">${item.status}</span>
+                        </td>
+                        <td class="py-4 px-6">
+                            <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+                                ${item.access === 'Private' ? '🔒' : '🔓'} ${item.access}
+                            </span>
+                        </td>
+                    </tr>
+                `;
+            });
+            tbody.innerHTML = html;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchDeliverables();
+
+            const btns = document.querySelectorAll('.wp-btn');
+            btns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    btns.forEach(b => {
+                        b.classList.remove('border-t-primary', 'opacity-100');
+                        b.classList.add('border-t-transparent', 'opacity-70');
+                        const iconContainer = b.querySelector('div');
+                        if (iconContainer) {
+                            iconContainer.classList.remove('bg-eco-surface', 'text-primary');
+                            iconContainer.classList.add('bg-surface-variant', 'text-on-surface-variant');
+                        }
+                    });
+                    const target = e.currentTarget;
+                    target.classList.add('border-t-primary', 'opacity-100');
+                    target.classList.remove('border-t-transparent', 'opacity-70');
+                    const activeIconContainer = target.querySelector('div');
+                    if (activeIconContainer) {
+                        activeIconContainer.classList.add('bg-eco-surface', 'text-primary');
+                        activeIconContainer.classList.remove('bg-surface-variant', 'text-on-surface-variant');
+                    }
+                    renderWP(target.dataset.wp);
+                });
+            });
+        });
+    </script>
+</Layout>

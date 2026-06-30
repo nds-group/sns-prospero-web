@@ -1,0 +1,93 @@
+---
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '@fontsource/outfit/600.css';
+import '@fontsource/outfit/800.css';
+import '@fontsource/cinzel/600.css';
+import '@fontsource/cinzel/800.css';
+import '@fontsource/cinzel/900.css';
+import '@fontsource/lora/400.css';
+import '@fontsource/lora/500.css';
+import '@fontsource/lora/600.css';
+import '@fontsource/lora/700.css';
+import 'material-symbols/outlined.css';
+import '../styles/global.css';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="PROSPERO Project - Horizon Europe 6G Networks" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/images/project-logos/logo-notext.svg" />
+		<title>{title}</title>
+		
+	</head>
+	<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+		
+		<!-- TopNavBar -->
+		<header class="fixed w-full top-0 z-50 bg-surface/80 backdrop-blur-md shadow-sm border-b border-glass-stroke">
+			<div class="flex justify-between items-center h-20 px-8 max-w-container-max mx-auto">
+				<a class="flex items-center gap-2 font-headline-md text-headline-md font-bold text-primary tracking-tight transition-transform hover:scale-95 duration-150 ease-in-out" href="/">
+					<img src="/images/project-logos/logo-notext.svg" alt="PROSPERO Logo" class="h-10 w-10 object-contain" />
+                    <span>PROSPERO</span>
+				</a>
+				<nav class="hidden md:flex items-center gap-6">
+					<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-eco-surface/50 font-body-md text-body-md px-2 py-1 rounded transition-all duration-300" href="/">Vision</a>
+					<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-eco-surface/50 font-body-md text-body-md px-2 py-1 rounded transition-all duration-300" href="/objectives">Objectives</a>
+					<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-eco-surface/50 font-body-md text-body-md px-2 py-1 rounded transition-all duration-300" href="/deliverables">Deliverables</a>
+					<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-eco-surface/50 font-body-md text-body-md px-2 py-1 rounded transition-all duration-300" href="/publications">Publications</a>
+					<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-eco-surface/50 font-body-md text-body-md px-2 py-1 rounded transition-all duration-300" href="/media">News</a>
+					<a class="text-on-surface-variant hover:text-primary transition-colors hover:bg-eco-surface/50 font-body-md text-body-md px-2 py-1 rounded transition-all duration-300" href="/#consortium">Partners</a>
+				</nav>
+				<!-- CTA removed as requested -->
+				<!-- Mobile Menu Button -->
+				<button class="md:hidden text-primary">
+					<span class="material-symbols-outlined text-2xl">menu</span>
+				</button>
+			</div>
+		</header>
+
+		<slot />
+
+		<!-- Footer -->
+		<footer class="bg-primary w-full py-section-padding text-white relative overflow-hidden bg-prospero-texture-minimal-light bg-cover bg-no-repeat bg-center">
+			<div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-gutter px-8 max-w-container-max mx-auto text-left">
+				<div class="col-span-1 md:col-span-2 space-y-stack-sm">
+					<img src="/images/project-logos/logo-horizontal.png" alt="PROSPERO Logo" class="h-12 w-auto object-contain brightness-0 invert mb-4" />
+					<p class="font-body-md text-body-md text-white/80 max-w-sm">
+						© 2026 PROSPERO Project. Co-funded by the European Union under Horizon Europe.
+					</p>
+					<div class="flex gap-4 pt-4">
+						<div class="w-16 h-10 bg-white/10 border border-white/20 rounded flex items-center justify-center text-white/70 text-xs font-semibold">EU Logo</div>
+						<div class="w-16 h-10 bg-white/10 border border-white/20 rounded flex items-center justify-center text-white/70 text-xs font-semibold">SNS JU</div>
+					</div>
+				</div>
+				<div class="space-y-stack-sm">
+					<h5 class="font-label-sm text-label-sm text-white font-bold">Project</h5>
+					<ul class="space-y-2">
+						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/">Vision</a></li>
+						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/objectives">Objectives</a></li>
+						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/media">News</a></li>
+					</ul>
+				</div>
+				<div class="space-y-stack-sm">
+					<h5 class="font-label-sm text-label-sm text-white font-bold">Legal</h5>
+					<ul class="space-y-2">
+						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="#">Privacy Policy</a></li>
+						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="#">Legal Notice</a></li>
+						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="#">Contact</a></li>
+						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="#">SNS JU</a></li>
+					</ul>
+				</div>
+			</div>
+		</footer>
+	</body>
+</html>

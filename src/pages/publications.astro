@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Publications - PROSPERO">
+    <section class="relative pt-32 pb-section-padding overflow-hidden bg-surface">
+        <div class="absolute inset-0 bg-6g-pattern opacity-50 z-0"></div>
+        <div class="max-w-container-max mx-auto px-8 relative z-10 text-center">
+            <h1 class="font-display-lg text-display-lg tracking-tight text-sovereign-blue mb-stack-sm">Scientific Publications</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Discover the latest research papers, journals, and presentations produced by the PROSPERO consortium.
+            </p>
+        </div>
+    </section>
+
+    <main class="py-section-padding bg-surface-container-lowest">
+        <div class="max-w-3xl mx-auto px-8 space-y-stack-lg" id="publications-container">
+            <!-- Loading -->
+            <div class="animate-pulse space-y-8">
+                <div class="h-8 bg-surface-variant w-1/3 rounded"></div>
+                <div class="h-32 bg-surface rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)]"></div>
+                <div class="h-32 bg-surface rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)]"></div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        async function fetchPublications() {
+            try {
+                const response = await fetch('/data.json');
+                const data = await response.json();
+                const container = document.getElementById('publications-container');
+                if(!container) return;
+
+                let html = '';
+
+                // Papers
+                if(data.papers && data.papers.length > 0) {
+                    html += `
+                        <div>
+                            <h2 class="font-headline-md text-headline-md text-sovereign-blue mb-stack-sm border-b border-surface-variant pb-2">Research Papers</h2>
+                            <div class="space-y-4 mt-stack-md">
+                    `;
+                    data.papers.forEach(p => {
+                        html += `
+                            <a href="${p.link}" target="_blank" class="block bg-white border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-xl p-8 group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow border-l-4 border-l-primary">
+                                <h3 class="font-headline-md text-[20px] leading-[28px] text-sovereign-blue group-hover:text-primary transition-colors">${p.title}</h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant mt-2">${p.authors}</p>
+                                <div class="flex items-center gap-4 mt-4 font-label-sm text-label-sm text-on-surface-variant">
+                                    <span class="bg-surface-variant px-3 py-1 rounded-full">${p.venue}</span>
+                                    <span>${p.year}</span>
+                                </div>
+                            </a>
+                        `;
+                    });
+                    html += '</div></div>';
+                }
+
+                // Posters
+                if(data.posters && data.posters.length > 0) {
+                    html += `
+                        <div>
+                            <h2 class="font-headline-md text-headline-md text-sovereign-blue mb-stack-sm border-b border-surface-variant pb-2">Posters & Presentations</h2>
+                            <div class="grid md:grid-cols-2 gap-6 mt-stack-md">
+                    `;
+                    data.posters.forEach(p => {
+                        html += `
+                            <a href="${p.link}" target="_blank" class="block bg-white border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-xl p-6 group hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow border-t-4 border-t-secondary">
+                                <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue group-hover:text-secondary transition-colors">${p.title}</h3>
+                                <p class="font-body-md text-body-md text-on-surface-variant mt-3 text-sm font-medium">📍 ${p.event}</p>
+                            </a>
+                        `;
+                    });
+                    html += '</div></div>';
+                }
+
+                // Zenodo
+                if(data.zenodo && data.zenodo.length > 0) {
+                    html += `
+                        <div>
+                            <h2 class="font-headline-md text-headline-md text-sovereign-blue mb-stack-sm border-b border-surface-variant pb-2">Open Data (Zenodo)</h2>
+                            <div class="space-y-4 mt-stack-md">
+                    `;
+                    data.zenodo.forEach(z => {
+                        html += `
+                            <a href="${z.link}" target="_blank" class="block bg-white border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-xl p-6 flex justify-between items-center group hover:bg-surface transition-colors">
+                                <div>
+                                    <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue group-hover:text-tertiary transition-colors">${z.title}</h3>
+                                    <p class="font-body-md text-body-md text-on-surface-variant mt-1 text-sm">${z.date}</p>
+                                </div>
+                                <span class="bg-tertiary-container/20 text-tertiary px-4 py-2 rounded-lg font-label-sm text-label-sm">Zenodo ↗</span>
+                            </a>
+                        `;
+                    });
+                    html += '</div></div>';
+                }
+
+                if(html === '') {
+                    html = '<p class="font-body-md text-on-surface-variant">No publications available.</p>';
+                }
+
+                container.innerHTML = html;
+
+            } catch(e) {
+                console.error(e);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchPublications);
+    </script>
+</Layout>

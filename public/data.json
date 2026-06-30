@@ -1,0 +1,62 @@
+{
+  "papers": [
+    {
+      "title": "A Vision for 6G Uniform Architecture",
+      "authors": "Jane Doe, John Smith",
+      "venue": "IEEE Communications Magazine",
+      "year": 2025,
+      "link": "https://doi.org/10.1109/MCOM.2025.1234567"
+    }
+  ],
+  "posters": [
+    {
+      "title": "Sustainable 6G Network Design",
+      "event": "6G Summit 2025",
+      "link": "#"
+    }
+  ],
+  "news": [
+    {
+      "date": "2026-01-15",
+      "title": "PROSPERO Project Kick-off",
+      "summary": "The PROSPERO project officially started today, aiming to build a uniform and simplified 6G architecture.",
+      "type": "Press Release"
+    },
+    {
+      "date": "2026-04-10",
+      "title": "First Plenary Meeting",
+      "summary": "Partners gathered in Madrid to discuss the initial requirements and the vGSBA framework.",
+      "type": "Event"
+    }
+  ],
+  "deliverables": {
+    "wp1": [
+      {"id": "D1.1", "name": "Project Management Handbook", "date": "M3", "status": "Completed", "access": "Private"},
+      {"id": "D1.2", "name": "Data management and ethics handbook", "date": "M6", "status": "Completed", "access": "Private"},
+      {"id": "D1.3", "name": "First Period Report of the Project", "date": "M12", "status": "Pending", "access": "Private"}
+    ],
+    "wp2": [
+      {"id": "D2.1", "name": "Network Intelligence Requirements", "date": "M9", "status": "Pending", "access": "Public"}
+    ],
+    "wp3": [],
+    "wp4": [],
+    "wp5": []
+  },
+  "zenodo": [
+    {
+      "title": "PROSPERO D1.1 - Project Requirements",
+      "date": "2026-06-01",
+      "link": "https://zenodo.org/record/123456"
+    }
+  ],
+  "partners": [
+    {"name": "Telefonica", "logo": "/images/partners-logos/telefonica.png"},
+    {"name": "NEC", "logo": "/images/partners-logos/nec.png"},
+    {"name": "UC3M", "logo": "/images/partners-logos/uc3m-logo.svg"},
+    {"name": "IMDEA Networks", "logo": "/images/partners-logos/imdea_networks.png"},
+    {"name": "Nokia", "logo": "/images/partners-logos/nokia.png"},
+    {"name": "FiberCop", "logo": "/images/partners-logos/fibercop.png"},
+    {"name": "Canary Bit", "logo": "/images/partners-logos/canarybit.png"},
+    {"name": "Real Wireless", "logo": "/images/partners-logos/realwireless.png"}
+  ]
+}

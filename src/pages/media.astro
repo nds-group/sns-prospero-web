@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="News & Media - PROSPERO">
+    <section class="relative pt-32 pb-section-padding overflow-hidden bg-surface">
+        <div class="absolute inset-0 bg-6g-pattern opacity-50 z-0"></div>
+        <div class="max-w-container-max mx-auto px-8 relative z-10 text-center">
+            <h1 class="font-display-lg text-display-lg tracking-tight text-sovereign-blue mb-stack-sm">News & Media</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">
+                Stay updated with the latest breakthroughs, publications, and events from the PROSPERO project.
+            </p>
+        </div>
+    </section>
+
+    <main class="py-section-padding bg-surface-container-lowest">
+        <div class="max-w-container-max mx-auto px-8 grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+            
+            <!-- Main Content: News Feed -->
+            <div class="lg:col-span-8 space-y-stack-md" id="news-feed">
+                <!-- Injected via JS -->
+                <div class="animate-pulse space-y-8">
+                    <div class="h-48 bg-surface rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-glass-stroke"></div>
+                    <div class="h-48 bg-surface rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-glass-stroke"></div>
+                </div>
+            </div>
+            
+            <!-- Sidebar: Press & Media -->
+            <aside class="lg:col-span-4 space-y-stack-md">
+                <div class="bg-surface rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] border-t-4 border-t-primary sticky top-28">
+                    <h3 class="font-headline-md text-headline-md text-sovereign-blue mb-2 flex items-center gap-2">
+                        📰 Press & Media
+                    </h3>
+                    <p class="font-body-md text-body-md text-on-surface-variant mb-stack-md">Resources for journalists and media professionals.</p>
+                    
+                    <div class="space-y-4">
+                        <a href="#" class="flex items-start gap-3 group">
+                            <span class="text-2xl opacity-50 group-hover:opacity-100 transition-opacity">📦</span>
+                            <div>
+                                <span class="block font-label-sm text-label-sm font-bold text-sovereign-blue group-hover:text-primary transition-colors">PROSPERO Media Kit (ZIP)</span>
+                                <span class="block text-xs text-on-surface-variant mt-1">Logos, branding guidelines, and high-res images. (12MB)</span>
+                            </div>
+                        </a>
+                        <a href="#" class="flex items-start gap-3 group">
+                            <span class="text-2xl opacity-50 group-hover:opacity-100 transition-opacity">📄</span>
+                            <div>
+                                <span class="block font-label-sm text-label-sm font-bold text-sovereign-blue group-hover:text-primary transition-colors">Project Factsheet (PDF)</span>
+                                <span class="block text-xs text-on-surface-variant mt-1">Overview of objectives and architecture. (2MB)</span>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <hr class="my-stack-md border-surface-variant"/>
+                    
+                    <h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-4 font-bold">Follow Us</h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-on-surface-variant">
+                            🔗
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-on-surface-variant">
+                            ✉️
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <script>
+        async function fetchNews() {
+            try {
+                const response = await fetch('/data.json');
+                const data = await response.json();
+                const news = data.news || [];
+                const container = document.getElementById('news-feed');
+                
+                if(!container) return;
+
+                if(news.length === 0) {
+                    container.innerHTML = '<p class="font-body-md text-on-surface-variant">No news available at the moment.</p>';
+                    return;
+                }
+
+                let html = '';
+                news.forEach(item => {
+                    const tagClass = item.type === 'Event' ? 'bg-tertiary-container/30 text-tertiary font-bold' : 'bg-eco-surface text-primary font-bold';
+                    html += `
+                        <article class="bg-white rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] border border-glass-stroke overflow-hidden hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
+                            <div class="p-8">
+                                <div class="flex items-center justify-between mb-4">
+                                    <span class="text-secondary text-sm font-bold flex items-center gap-1">📅 ${item.date}</span>
+                                    <span class="text-xs px-3 py-1 rounded-full ${tagClass}">${item.type || 'News'}</span>
+                                </div>
+                                <h2 class="font-headline-md text-[24px] leading-[32px] text-sovereign-blue mb-4">${item.title}</h2>
+                                <p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                                    ${item.summary}
+                                </p>
+                                <a href="#" class="text-primary font-label-sm text-label-sm hover:underline flex items-center gap-1">
+                                    Read More &rarr;
+                                </a>
+                            </div>
+                        </article>
+                    `;
+                });
+                
+                container.innerHTML = html;
+
+            } catch (error) {
+                console.error("Error loading news", error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchNews);
+    </script>
+</Layout>
