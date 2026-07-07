@@ -54,12 +54,12 @@
   --color-tertiary: #1b4d8a;
 
   --font-headline-lg: 'Cinzel', serif;
-  --font-display-lg: 'Lora', serif;
+  --font-display-lg: 'Cinzel', serif;
   --font-headline-lg-mobile: 'Lora', serif;
   --font-body-md: 'Inter';
   --font-body-lg: 'Inter';
   --font-label-sm: 'Inter';
-  --font-headline-md: 'Cinzel', serif;
+  --font-headline-md: 'Lora', serif;
 
   --text-headline-md: 24px;
   --text-headline-md--line-height: 32px;
@@ -99,6 +99,14 @@
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
     font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.font-headline-lg {
+    font-weight: 600;
+}
+
+.font-display-lg {
+    font-weight: 600;
 }
 
 @utility bg-prospero-texture {
