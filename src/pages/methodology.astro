@@ -1,0 +1,92 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const phases = [
+    {
+        step: '1',
+        title: 'Requirements and Architecture',
+        body: 'WP2 starts from stakeholder needs, business cases, and standardisation input to define requirements for UIS, AI-6G, and UTH. These requirements guide the design of modules, interfaces, and operational procedures.',
+    },
+    {
+        step: '2',
+        title: 'Design of Innovations',
+        body: 'WP3 transforms the architecture into detailed technical designs for TCO reduction, new revenue opportunities, and resiliency. It also defines validation concepts for the solutions later implemented in WP4.',
+    },
+    {
+        step: '3',
+        title: 'Implementation and Validation',
+        body: 'WP4 implements prototypes and emulation-based validations for the designed innovations, covering energy-aware AI, vDU scaling, AI-driven services, and secure-by-default resiliency mechanisms.',
+    },
+    {
+        step: '4',
+        title: 'Impact and Standardisation',
+        body: 'WP5 connects results to external stakeholders through communication, dissemination, exploitation, techno-economic analysis, standardisation contributions, open-source engagement, and technology transfer.',
+    },
+];
+
+const workPackages = [
+    ['WP1', 'Project Management & Coordination', 'TID', 'M1-M36'],
+    ['WP2', 'UIS 6G System Architecture', 'UC3M', 'M1-M30'],
+    ['WP3', 'Design of Innovations and Validation Concept', 'NOK', 'M3-M33'],
+    ['WP4', 'Implementation, Viability, and Validation', 'IMDEA', 'M6-M36'],
+    ['WP5', 'Communication, Exploitation, and Standardisation', 'RW', 'M1-M36'],
+];
+---
+
+<Layout title="Methodology - PROSPERO">
+    <section class="relative pt-32 pb-section-padding overflow-hidden bg-surface bg-[url('/images/project-logos/getsitelogo.png')] bg-contain bg-center bg-no-repeat">
+        <div class="absolute inset-0 bg-white/60 backdrop-blur-sm z-0"></div>
+        <div class="max-w-container-max mx-auto px-8 relative z-10 text-center">
+            <h1 class="font-display-lg text-display-lg tracking-tight text-sovereign-blue mb-stack-md">Methodology</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                PROSPERO follows an iterative work plan that links architecture, solution design, implementation, validation, and impact activities throughout the 36-month project.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-section-padding bg-surface-container-lowest">
+        <div class="max-w-container-max mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {phases.map((phase) => (
+                    <article class="bg-white rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] relative pt-12">
+                        <div class="w-12 h-12 bg-eco-surface text-primary rounded-full flex items-center justify-center font-bold text-lg absolute -top-6 left-1/2 -translate-x-1/2 shadow-sm border border-primary/20">{phase.step}</div>
+                        <h2 class="font-headline-md text-headline-md text-on-background mb-2">{phase.title}</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">{phase.body}</p>
+                    </article>
+                ))}
+            </div>
+        </div>
+    </section>
+
+    <section class="py-section-padding bg-surface">
+        <div class="max-w-container-max mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-gutter">
+            <div>
+                <h2 class="font-headline-lg text-headline-lg text-sovereign-blue mb-stack-md">Iterative Waterfall</h2>
+                <div class="space-y-stack-md font-body-lg text-body-lg text-on-surface-variant">
+                    <p>
+                        The project combines structured planning with iterative refinement. WP2 defines requirements and architecture; WP3 develops technical designs and validation concepts; WP4 implements and evaluates the solutions; WP5 feeds stakeholder, business, standardisation, and dissemination input back into the technical work.
+                    </p>
+                    <p>
+                        The deliverables of WP2, WP3, and WP4 are shifted over time to support cross-fertilisation between architecture, design, and validation. This creates initial, intermediate, and final iterations leading to consolidated architecture, solutions, and validation results by M36.
+                    </p>
+                </div>
+            </div>
+            <div class="bg-white rounded-xl border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-hidden">
+                <div class="p-6 border-b border-surface-variant">
+                    <h3 class="font-headline-md text-headline-md text-primary">Work Plan</h3>
+                </div>
+                <div class="divide-y divide-surface-variant">
+                    {workPackages.map(([wp, title, lead, months]) => (
+                        <div class="p-5 grid grid-cols-[64px_1fr] gap-4">
+                            <span class="font-label-sm text-label-sm font-bold text-primary">{wp}</span>
+                            <div>
+                                <h4 class="font-body-md text-body-md font-bold text-sovereign-blue">{title}</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant">Lead: {lead} · Timeline: {months}</p>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

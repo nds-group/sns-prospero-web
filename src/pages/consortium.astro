@@ -1,0 +1,188 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const partners = [
+    {
+        shortName: 'TID',
+        name: 'Telefonica Innovacion Digital SL',
+        country: 'Spain',
+        flag: '/images/eu-logos/es.svg',
+        logo: '/images/partners-logos/telefonica.png',
+        website: 'https://www.telefonica.com/en/',
+        address: 'Ronda de la Comunicacion, s/n, Distrito Telefonica, 28050 Madrid, Spain',
+        contact: 'Andra Lutu',
+        role: 'Project Coordinator. Leads WP1 and technical work on TCO reduction, new business models, and resiliency innovations.',
+        people: ['Andra Lutu', 'Eduard Marin Fabregas'],
+    },
+    {
+        shortName: 'NEC',
+        name: 'NEC Laboratories Europe GmbH',
+        country: 'Germany',
+        flag: '/images/eu-logos/de.svg',
+        logo: '/images/partners-logos/nec.png',
+        website: 'https://www.neclab.eu',
+        address: 'Kurfuersten-Anlage 36, 69115 Heidelberg, Germany',
+        contact: 'Andres Garcia-Saavedra',
+        role: 'Technical Manager. Shapes the technical direction of the PROSPERO architecture and contributes to TCO and revenue-stream innovations.',
+        people: ['Andres Garcia-Saavedra', 'Jose A. Ayala Romero'],
+    },
+    {
+        shortName: 'UC3M',
+        name: 'Universidad Carlos III de Madrid',
+        country: 'Spain',
+        flag: '/images/eu-logos/es.svg',
+        logo: '/images/partners-logos/uc3m-logo.svg',
+        website: 'https://www.uc3m.es/',
+        address: 'Avenida de la Universidad 30, 28911 Leganes, Spain',
+        contact: 'Marco Gramaglia',
+        role: 'Leads WP2 on architectural design and contributes to simplification, AI integration, resiliency, dissemination, and ethics management.',
+        people: ['Marco Gramaglia'],
+    },
+    {
+        shortName: 'IMDEA',
+        name: 'Fundacion IMDEA Networks',
+        country: 'Spain',
+        flag: '/images/eu-logos/es.svg',
+        logo: '/images/partners-logos/imdea_networks.png',
+        website: 'https://networks.imdea.org/',
+        address: 'Av. del Mar Mediterraneo 22, 28918 Leganes, Madrid, Spain',
+        contact: 'Marco Fiore',
+        role: 'Leads WP4 implementation, testing, and validation. Also coordinates dissemination and communication activities through Task 5.3.',
+        people: ['Marco Fiore'],
+    },
+    {
+        shortName: 'NOKIA',
+        name: 'Nokia Solutions and Networks GmbH & Co. KG',
+        country: 'Germany',
+        flag: '/images/eu-logos/de.svg',
+        logo: '/images/partners-logos/nokia.png',
+        website: 'https://www.nokia.com/networks/',
+        address: 'Nokia Bell Labs sites in Munich and Stuttgart, Germany',
+        contact: 'Heiko Straulino',
+        role: 'Leads WP3, creating detailed technical designs and validation concepts for PROSPERO solutions.',
+        people: ['Heiko Straulino', 'Ralf Klotsche', 'Umar Toseef'],
+    },
+    {
+        shortName: 'FBC',
+        name: 'FiberCop S.p.A.',
+        country: 'Italy',
+        flag: '/images/eu-logos/it.svg',
+        logo: '/images/partners-logos/fibercop.png',
+        website: 'https://www.fibercop.it/',
+        address: 'Italy',
+        contact: 'Simone Bizzarri',
+        role: 'Standardisation Manager. Contributes network management, orchestration, 3GPP alignment, and Network Digital Twin expertise.',
+        people: ['Simone Bizzarri', 'Maurizio Fodrini'],
+    },
+    {
+        shortName: 'CAB',
+        name: 'Canary Bit AB',
+        country: 'Sweden',
+        flag: '/images/eu-logos/se.svg',
+        logo: '/images/partners-logos/canarybit.png',
+        website: 'https://canarybit.eu/',
+        address: 'Stockholm, Sweden',
+        contact: 'Nicolae Paladi',
+        role: 'Contributes cybersecurity and resiliency design and leads Task 4.3 implementation of resiliency innovations.',
+        people: ['Nicolae Paladi', 'Pegah Nikbakht'],
+    },
+    {
+        shortName: 'RW',
+        name: 'Real Wireless Limited',
+        country: 'United Kingdom',
+        flag: '/images/eu-logos/gb.svg',
+        logo: '/images/partners-logos/realwireless.png',
+        website: 'https://www.real-wireless.com/',
+        address: 'United Kingdom',
+        contact: 'Julie Bradford',
+        role: 'Leads WP5 and provides techno-economic analysis, network modelling, impact pathways, and innovation strategy.',
+        people: ['Julie Bradford', 'Anastasios Karousos', 'Simon Fletcher'],
+    },
+];
+---
+
+<Layout title="Consortium - PROSPERO">
+    <section class="relative pt-32 pb-section-padding overflow-hidden bg-surface bg-[url('/images/project-logos/getsitelogo.png')] bg-contain bg-center bg-no-repeat">
+        <div class="absolute inset-0 bg-white/60 backdrop-blur-sm z-0"></div>
+        <div class="max-w-container-max mx-auto px-8 relative z-10 text-center">
+            <h1 class="font-display-lg text-display-lg tracking-tight text-sovereign-blue mb-stack-md">Consortium</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                PROSPERO brings together eight partners from five European countries, combining major industry players, leading research institutions, and innovative SMEs.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-section-padding bg-surface-container-lowest">
+        <div class="max-w-container-max mx-auto px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-section-padding">
+                <div class="bg-white border border-glass-stroke rounded-xl p-6 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+                    <strong class="block font-display-lg text-[40px] leading-none text-primary">8</strong>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">Partners</span>
+                </div>
+                <div class="bg-white border border-glass-stroke rounded-xl p-6 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+                    <strong class="block font-display-lg text-[40px] leading-none text-primary">5</strong>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">Countries</span>
+                </div>
+                <div class="bg-white border border-glass-stroke rounded-xl p-6 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+                    <strong class="block font-display-lg text-[40px] leading-none text-primary">2</strong>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">SMEs</span>
+                </div>
+                <div class="bg-white border border-glass-stroke rounded-xl p-6 text-center shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+                    <strong class="block font-display-lg text-[40px] leading-none text-primary">289</strong>
+                    <span class="font-label-sm text-label-sm text-on-surface-variant">Person Months</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+                {partners.map((partner) => (
+                    <article class="bg-white border border-glass-stroke rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)] overflow-hidden flex flex-col h-full min-h-[720px]">
+                        <div class="bg-surface p-6 border-b border-glass-stroke">
+                            <div class="flex items-center justify-between mb-5">
+                                {partner.flag ? (
+                                    <img src={partner.flag} alt={`${partner.country} flag`} class="h-7 w-10 object-cover rounded-sm border border-glass-stroke" />
+                                ) : (
+                                    <span class="inline-flex h-7 min-w-10 items-center justify-center rounded-sm border border-glass-stroke bg-white px-2 font-label-sm text-label-sm text-sovereign-blue">SE</span>
+                                )}
+                                <span class="font-label-sm text-label-sm font-bold text-primary">{partner.shortName}</span>
+                            </div>
+                            <div class="h-24 w-full flex items-center justify-center">
+                                <img src={partner.logo} alt={`${partner.name} logo`} class="h-12 w-auto max-w-[190px] object-contain" />
+                            </div>
+                        </div>
+
+                        <div class="p-6 flex flex-col flex-1">
+                            <div class="mb-stack-md min-h-[92px]">
+                                <h2 class="font-headline-md text-[21px] leading-[27px] text-sovereign-blue">{partner.name}</h2>
+                                <p class="font-body-md text-body-md text-on-surface-variant mt-1">{partner.country}</p>
+                            </div>
+
+                            <dl class="space-y-4 mb-stack-md">
+                                <div>
+                                    <dt class="font-label-xs text-label-sm font-bold text-on-surface-variant uppercase tracking-wider mb-1">Contact</dt>
+                                    <dd class="font-body-md text-body-md text-on-background">{partner.contact}</dd>
+                                </div>
+                                <div class="min-h-[72px]">
+                                    <dt class="font-label-xs text-label-sm font-bold text-on-surface-variant uppercase tracking-wider mb-1">Address</dt>
+                                    <dd class="font-body-md text-body-md text-on-background">{partner.address}</dd>
+                                </div>
+                                <div class="min-h-[72px]">
+                                    <dt class="font-label-xs text-label-sm font-bold text-on-surface-variant uppercase tracking-wider mb-1">Research Team</dt>
+                                    <dd class="font-body-md text-body-md text-on-background">{partner.people.join(', ')}</dd>
+                                </div>
+                            </dl>
+
+                            <div class="border-t border-surface-variant pt-stack-md mt-auto min-h-[168px]">
+                                <p class="font-body-md text-body-md text-on-surface-variant line-clamp-5">{partner.role}</p>
+                            </div>
+
+                            <a href={partner.website} target="_blank" rel="noreferrer" class="mt-6 inline-flex items-center justify-center gap-2 rounded bg-primary px-4 py-3 font-label-sm text-label-sm font-bold text-white hover:bg-sovereign-blue transition-colors">
+                                Website
+                                <span class="material-symbols-outlined text-[18px]">open_in_new</span>
+                            </a>
+                        </div>
+                    </article>
+                ))}
+            </div>
+        </div>
+    </section>
+</Layout>

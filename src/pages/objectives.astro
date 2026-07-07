@@ -1,86 +1,110 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+const objectives = [
+    {
+        heading: 'Transition towards a UIS 6G architecture',
+        text: 'PROSPERO will evolve current mobile systems into a Uniform, Integrated, and Simplified architecture that joins connectivity, computing, and service platforms through open and globally applicable abstractions.',
+        points: ['Virtualized Global Service-Based Architecture (vGSBA)', 'Compute Continuum Layer (CCL)', 'Evolved Zero Trust Layer (eZTL)'],
+        icon: 'architecture',
+    },
+    {
+        heading: 'Reduce Total Cost of Ownership',
+        text: 'The project targets architectural, AI-driven, and resource-pooling innovations that reduce CAPEX and OPEX while improving energy efficiency across future 6G infrastructure.',
+        points: ['Network-native AI in the CCL', 'Dynamic vDU scaling', 'AI-driven energy efficiency'],
+        icon: 'savings',
+    },
+    {
+        heading: 'Enable new revenue streams',
+        text: 'PROSPERO explores business opportunities created by deep AI integration, shared compute resources, edge services, and secure access to rich network information.',
+        points: ['AI-and-6G for shared RAN and AI workloads', 'AI-on-6G services using RAN data', 'Causal inference for planning and optimization'],
+        icon: 'trending_up',
+    },
+    {
+        heading: 'Enhance resilience and operational continuity',
+        text: 'The project will design a Unified Telco HyperFabric that supports trusted global operations, resource pooling, and secure-by-default 6G infrastructure in critical scenarios.',
+        points: ['Opportunistic telco resource pooling', 'Programmable in-network security', 'Confidential computing continuum'],
+        icon: 'shield_lock',
+    },
+];
+
+const impactItems = [
+    'Green transition through energy-aware AI and efficient resource utilization.',
+    'European competitiveness through open, software-based and AI-native 6G architectures.',
+    'Technology sovereignty through resilient, adaptable and less proprietary infrastructure.',
+];
 ---
 
-<Layout title="Objectives & Methodology - PROSPERO">
-    <!-- Hero: Objectives & Impact -->
-    <section class="relative pt-32 pb-section-padding overflow-hidden bg-surface">
-        <div class="absolute inset-0 bg-6g-pattern opacity-50 z-0"></div>
+<Layout title="Objectives & Impact - PROSPERO">
+    <section class="relative pt-32 pb-section-padding overflow-hidden bg-surface bg-[url('/images/project-logos/getsitelogo.png')] bg-contain bg-center bg-no-repeat">
+        <div class="absolute inset-0 bg-white/40 backdrop-blur-sm z-0"></div>
         <div class="max-w-container-max mx-auto px-8 relative z-10 text-center">
             <h1 class="font-display-lg text-display-lg tracking-tight text-sovereign-blue mb-stack-md">
                 Objectives & Impact
             </h1>
             <div class="w-24 h-1 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full mb-stack-lg"></div>
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
-                PROSPERO aims to redefine the landscape of 6G telecommunications through sustainable, transparent, and high-performance network architectures, ensuring European technological sovereignty.
+                PROSPERO defines, develops, and validates a pragmatic 6G architecture focused on economic sustainability, new service models, and resilience by design.
             </p>
         </div>
     </section>
 
-    <!-- Methodology -->
     <section class="py-section-padding bg-surface-container-lowest">
-        <div class="max-w-container-max mx-auto px-8 text-center">
-            <h2 class="font-headline-lg text-headline-lg text-sovereign-blue mb-stack-md">Methodology</h2>
-            
-            <div class="relative mt-12">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="bg-white rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300 relative pt-12">
-                        <div class="w-12 h-12 bg-eco-surface text-primary rounded-full flex items-center justify-center font-bold text-lg absolute -top-6 left-1/2 -translate-x-1/2 shadow-sm border border-primary/20">1</div>
-                        <h4 class="font-headline-md text-headline-md text-on-background mb-2">Research & Analysis</h4>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Comprehensive study of current 5G limitations and emerging 6G requirements.</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300 relative pt-12">
-                        <div class="w-12 h-12 bg-eco-surface text-primary rounded-full flex items-center justify-center font-bold text-lg absolute -top-6 left-1/2 -translate-x-1/2 shadow-sm border border-primary/20">2</div>
-                        <h4 class="font-headline-md text-headline-md text-on-background mb-2">Architecture Design</h4>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Developing modular frameworks for dynamic resource integration.</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300 relative pt-12">
-                        <div class="w-12 h-12 bg-eco-surface text-primary rounded-full flex items-center justify-center font-bold text-lg absolute -top-6 left-1/2 -translate-x-1/2 shadow-sm border border-primary/20">3</div>
-                        <h4 class="font-headline-md text-headline-md text-on-background mb-2">Simulation & Testing</h4>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Rigorous evaluation of proposed models using advanced network simulators.</p>
-                    </div>
-                    <div class="bg-white rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] transition-shadow duration-300 relative pt-12">
-                        <div class="w-12 h-12 bg-eco-surface text-primary rounded-full flex items-center justify-center font-bold text-lg absolute -top-6 left-1/2 -translate-x-1/2 shadow-sm border border-primary/20">4</div>
-                        <h4 class="font-headline-md text-headline-md text-on-background mb-2">Deployment & Validation</h4>
-                        <p class="font-body-md text-body-md text-on-surface-variant">Real-world deployment scenarios to validate system efficiency and scalability.</p>
-                    </div>
-                </div>
+        <div class="max-w-container-max mx-auto px-8">
+            <div class="max-w-3xl mx-auto text-center mb-section-padding">
+                <h2 class="font-headline-lg text-headline-lg text-sovereign-blue mb-stack-sm">Core Strategy</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant">
+                    The project is built around one architectural objective and three operator-driven outcomes: lowering TCO, creating new revenue streams, and ensuring robust network resilience.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                {objectives.map((objective) => (
+                    <article class="bg-white rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] border-t-4 border-t-primary">
+                        <div class="flex items-start gap-4 mb-stack-sm">
+                            <div class="w-12 h-12 rounded-full bg-eco-surface flex items-center justify-center text-primary shrink-0">
+                                <span class="material-symbols-outlined">{objective.icon}</span>
+                            </div>
+                            <div>
+                                <h3 class="font-headline-md text-headline-md text-sovereign-blue">{objective.heading}</h3>
+                            </div>
+                        </div>
+                        <p class="font-body-md text-body-md text-on-surface-variant mb-stack-sm">{objective.text}</p>
+                        <ul class="space-y-2">
+                            {objective.points.map((point) => (
+                                <li class="flex gap-2 font-body-md text-body-md text-on-background">
+                                    <span class="material-symbols-outlined text-primary text-[20px] mt-0.5">check_circle</span>
+                                    <span>{point}</span>
+                                </li>
+                            ))}
+                        </ul>
+                    </article>
+                ))}
             </div>
         </div>
     </section>
 
-    <!-- Project Overview -->
     <section class="py-section-padding bg-surface">
-        <div class="max-w-3xl mx-auto px-8">
-            <h2 class="font-headline-lg text-headline-lg text-sovereign-blue mb-stack-lg text-center">Project Overview</h2>
-            <div class="space-y-stack-md text-on-surface-variant font-body-lg text-body-lg">
-                <p>
-                    The PROSPERO project initiates a transformative approach to mobile infrastructure, aiming to construct a truly global cellular provider model. By integrating commercial entities and Mobile Network Operators (MNOs) through state-of-the-art technologies, PROSPERO facilitates dynamic business collaborations and enables new commercial models.
+        <div class="max-w-container-max mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-gutter items-start">
+            <div>
+                <h2 class="font-headline-lg text-headline-lg text-sovereign-blue mb-stack-md">Performance Ambition</h2>
+                <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-md">
+                    PROSPERO will validate its innovations through measurable technology, business, and productivity KPIs. The work focuses on realistic experimental and data-driven settings, with prototypes and evaluations demonstrating viability across TCO reduction, revenue opportunities, and resilience.
                 </p>
-                <p>
-                    Building on the foundation laid by previous European projects like ORIGAMI, PROSPERO specifically targets the barriers to entry in the telecommunications market. It provides a robust, scalable architecture that supports the demanding requirements of 6G, while maintaining a strong commitment to environmental sustainability and energy efficiency.
+                <p class="font-body-md text-body-md text-on-surface-variant">
+                    Key targets described in Part B include resource utilization gains, RAN energy reduction, improved service accuracy, secure zero-trust service chains, and high service availability during large-scale disruption scenarios.
                 </p>
-                <div class="bg-eco-surface/50 p-8 rounded-xl border-l-4 border-primary my-stack-lg shadow-sm">
-                    <p class="font-headline-md text-headline-md text-primary m-0">"Our mission is to architect a transparent, high-frequency network that empowers users while safeguarding ecological boundaries."</p>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Ethics & Compliance -->
-    <section class="py-section-padding bg-surface-container-lowest border-t border-glass-stroke">
-        <div class="max-w-3xl mx-auto px-8 text-center">
-            <h2 class="font-headline-lg text-headline-lg text-sovereign-blue mb-stack-md">Ethics & Compliance</h2>
-            <p class="font-body-lg text-body-lg text-on-surface-variant mb-stack-lg">
-                PROSPERO is deeply committed to upholding the highest standards of ethics, privacy, and regulatory compliance throughout its lifecycle. We strictly adhere to European Union regulations, including GDPR, ensuring that all data handling and network operations are transparent and secure. Our ethics committee oversees operations to maintain these rigorous standards.
-            </p>
-            <div class="flex justify-center gap-4 flex-wrap">
-                <span class="inline-flex items-center gap-2 bg-surface px-6 py-3 rounded-full font-label-sm text-label-sm font-bold text-sovereign-blue shadow-sm border border-glass-stroke">
-                    <span class="material-symbols-outlined text-primary">verified_user</span> GDPR Compliant
-                </span>
-                <span class="inline-flex items-center gap-2 bg-surface px-6 py-3 rounded-full font-label-sm text-label-sm font-bold text-sovereign-blue shadow-sm border border-glass-stroke">
-                    <span class="material-symbols-outlined text-primary">policy</span> EU Horizon Standards
-                </span>
+            <div class="bg-white rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+                <h3 class="font-headline-md text-headline-md text-primary mb-stack-sm">Expected Impact</h3>
+                <ul class="space-y-4">
+                    {impactItems.map((item) => (
+                        <li class="flex gap-3 font-body-md text-body-md text-on-surface-variant">
+                            <span class="material-symbols-outlined text-secondary text-[22px] mt-0.5">arrow_forward</span>
+                            <span>{item}</span>
+                        </li>
+                    ))}
+                </ul>
             </div>
         </div>
     </section>

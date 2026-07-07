@@ -31,16 +31,41 @@
   ],
   "deliverables": {
     "wp1": [
-      {"id": "D1.1", "name": "Project Management Handbook", "date": "M3", "status": "Completed", "access": "Private"},
-      {"id": "D1.2", "name": "Data management and ethics handbook", "date": "M6", "status": "Completed", "access": "Private"},
-      {"id": "D1.3", "name": "First Period Report of the Project", "date": "M12", "status": "Pending", "access": "Private"}
+      {"id": "D1.1", "name": "Project handbook", "description": "Outline of project management protocols, communication channels, and primary governance bodies.", "date": "M1", "lead": "TID", "status": "Planned", "access": "SEN"},
+      {"id": "D1.2", "name": "Data management handbook", "description": "Procedures and best practices for data handling in the project.", "date": "M3", "lead": "UC3M", "status": "Planned", "access": "SEN"},
+      {"id": "D1.3", "name": "Ethics handbook", "description": "Specific ethics guidelines to be followed by partners during the project.", "date": "M3", "lead": "UC3M", "status": "Planned", "access": "SEN"},
+      {"id": "D1.4", "name": "Year 1 management report", "description": "Progress report outlining the overall activities during the first project year.", "date": "M12", "lead": "TID", "status": "Planned", "access": "SEN"},
+      {"id": "D1.5", "name": "Year 2 management report", "description": "Progress report outlining the overall activities during the second project year.", "date": "M24", "lead": "TID", "status": "Planned", "access": "SEN"},
+      {"id": "D1.6", "name": "Year 3 management report", "description": "Progress report outlining the overall activities during the third project year.", "date": "M36", "lead": "TID", "status": "Planned", "access": "SEN"}
     ],
     "wp2": [
-      {"id": "D2.1", "name": "Network Intelligence Requirements", "date": "M9", "status": "Pending", "access": "Public"}
+      {"id": "D2.1", "name": "Initial report on requirements and definition of requirements for PROSPERO architectural components and associated solutions", "description": "State of the art synthesis, requirement definition, and first description of PROSPERO components and solutions.", "date": "M10", "lead": "NEC", "status": "Planned", "access": "Public"},
+      {"id": "D2.2", "name": "Initial architecture of PROSPERO, new business models and refinement of requirements", "description": "Initial definition of architectural modules, procedures, and refined requirements.", "date": "M20", "lead": "IMDEA", "status": "Planned", "access": "Public"},
+      {"id": "D2.3", "name": "Final architecture of PROSPERO and definition of business models", "description": "Final definition of the PROSPERO architecture.", "date": "M30", "lead": "UC3M", "status": "Planned", "access": "Public"}
     ],
-    "wp3": [],
-    "wp4": [],
-    "wp5": []
+    "wp3": [
+      {"id": "D3.1", "name": "Description of solutions exploiting PROSPERO architecture components", "description": "Discussion of project strategic paradigms and their integration in the PROSPERO architecture.", "date": "M13", "lead": "UC3M", "status": "Planned", "access": "Public"},
+      {"id": "D3.2", "name": "Initial design of solutions exploiting PROSPERO architecture components", "description": "Initial design of PROSPERO solutions in the context of the architecture designed by the project.", "date": "M23", "lead": "TID", "status": "Planned", "access": "Public"},
+      {"id": "D3.3", "name": "Final design of solutions exploiting PROSPERO architecture components", "description": "Final design of PROSPERO solutions and their integration in the defined architecture.", "date": "M33", "lead": "NOK", "status": "Planned", "access": "Public"}
+    ],
+    "wp4": [
+      {"id": "D4.1", "name": "Initial report on evaluation frameworks and tools", "description": "Definition of the PROSPERO evaluation strategy, tools, and datasets.", "date": "M16", "lead": "CAB", "status": "Planned", "access": "Public"},
+      {"id": "D4.2", "name": "Initial evaluation of solutions exploiting PROSPERO architecture components", "description": "Initial implementation of PROSPERO solutions and discussion of the final evaluation plan.", "date": "M26", "lead": "NEC", "status": "Planned", "access": "Public"},
+      {"id": "D4.3", "name": "Final evaluation of solutions exploiting PROSPERO architecture components", "description": "Final implementation of PROSPERO solutions and discussion of final evaluation results.", "date": "M36", "lead": "IMDEA", "status": "Planned", "access": "Public"}
+    ],
+    "wp5": [
+      {"id": "D5.1", "name": "Communication, dissemination and exploitation plan (CoDEP)", "description": "Definition of the PROSPERO communication, dissemination, and exploitation strategies.", "date": "M3", "lead": "RW", "status": "Planned", "access": "Public"},
+      {"id": "D5.2", "name": "Report on communication, dissemination and exploitation results and updated CoDEP for Y1", "description": "Report on activities performed during PROSPERO Y1 and analysis of business cases with relevant stakeholders.", "date": "M13", "lead": "IMDEA", "status": "Planned", "access": "Public"},
+      {"id": "D5.3", "name": "Report on communication, dissemination and exploitation results and updated CoDEP for Y3", "description": "Report on activities performed during PROSPERO Y2 and initial verification of the business cases.", "date": "M25", "lead": "TID", "status": "Planned", "access": "Public"},
+      {"id": "D5.4", "name": "Final report on communication, dissemination and exploitation results", "description": "Final report of communication, dissemination, and exploitation activities, including final validation of business cases.", "date": "M36", "lead": "RW", "status": "Planned", "access": "Public"}
+    ],
+    "summary": [
+      {"wp": "WP1", "title": "Project Management & Coordination", "lead": "TID", "months": "M1-M36", "pm": 26},
+      {"wp": "WP2", "title": "Uniform, Integrated, Simplified (UIS) 6G System Architecture", "lead": "UC3M", "months": "M1-M30", "pm": 61},
+      {"wp": "WP3", "title": "Design of the UIS Architecture Innovations and Validation Concept", "lead": "NOK", "months": "M3-M33", "pm": 68},
+      {"wp": "WP4", "title": "Implementation, Viability, and Validation of PROSPERO Innovations", "lead": "IMDEA", "months": "M6-M36", "pm": 75},
+      {"wp": "WP5", "title": "Communication, Dissemination, Exploitation, and Standardisation", "lead": "RW", "months": "M1-M36", "pm": 59}
+    ]
   },
   "zenodo": [
     {

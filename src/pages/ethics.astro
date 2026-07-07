@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const principles = [
+    {
+        icon: 'verified_user',
+        title: 'Ethics by Conception',
+        body: 'PROSPERO will provide ethics and regulatory guidelines throughout the project lifecycle, with continuous monitoring to detect and mitigate inequalities, biases, and compliance risks.',
+    },
+    {
+        icon: 'diversity_3',
+        title: 'Gender and Inclusion',
+        body: 'All partners have Gender Equality Plans. The project will promote inclusive engagement, gender-sensitive data collection, and participation from women entrepreneurs, innovators, and researchers.',
+    },
+    {
+        icon: 'psychology',
+        title: 'Responsible AI',
+        body: 'Potential gender bias in AI and ML technologies will be analysed, especially where bias may originate from training data or data governance processes.',
+    },
+    {
+        icon: 'public',
+        title: 'Open Science',
+        body: 'Publications, supporting material, datasets, software, models, algorithms, and workflows will be made accessible through trusted repositories such as Zenodo and OpenAIRE where appropriate.',
+    },
+];
+---
+
+<Layout title="Ethics - PROSPERO">
+    <section class="relative pt-32 pb-section-padding overflow-hidden bg-surface bg-[url('/images/project-logos/getsitelogo.png')] bg-contain bg-center bg-no-repeat">
+        <div class="absolute inset-0 bg-white/60 backdrop-blur-sm z-0"></div>
+        <div class="max-w-container-max mx-auto px-8 relative z-10 text-center">
+            <h1 class="font-display-lg text-display-lg tracking-tight text-sovereign-blue mb-stack-md">Ethics</h1>
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
+                PROSPERO integrates ethics, inclusion, data protection, responsible AI, and open science into the design and execution of the project.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-section-padding bg-surface-container-lowest">
+        <div class="max-w-container-max mx-auto px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-section-padding">
+                {principles.map((principle) => (
+                    <article class="bg-white rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+                        <div class="w-12 h-12 rounded-full bg-eco-surface flex items-center justify-center text-primary mb-stack-sm">
+                            <span class="material-symbols-outlined">{principle.icon}</span>
+                        </div>
+                        <h2 class="font-headline-md text-headline-md text-sovereign-blue mb-2">{principle.title}</h2>
+                        <p class="font-body-md text-body-md text-on-surface-variant">{principle.body}</p>
+                    </article>
+                ))}
+            </div>
+
+            <div class="bg-surface rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+                <h2 class="font-headline-lg text-headline-lg text-sovereign-blue mb-stack-md text-center">Ethics, Quality, and Risk Monitoring</h2>
+                <div class="max-w-3xl mx-auto space-y-stack-md font-body-lg text-body-lg text-on-surface-variant">
+                    <p>
+                        Ethics and quality management are embedded in WP1 through Task 1.3, led by UC3M with TID and NEC. This task prepares templates and drafting guidelines, oversees ethical compliance, and monitors risks and countermeasures during project execution.
+                    </p>
+                    <p>
+                        PROSPERO will also establish synergies with existing 6G-IA initiatives, especially the Women in Telecom and Research Working Group, to contribute to a more gender-inclusive and diverse 6G research and innovation community.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>

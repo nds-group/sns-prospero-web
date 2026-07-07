@@ -3,20 +3,24 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Deliverables Hub - PROSPERO">
-    <section class="relative pt-32 pb-section-padding overflow-hidden bg-surface border-b border-glass-stroke">
-        <div class="absolute inset-0 bg-6g-pattern opacity-50 z-0"></div>
+    <section class="relative pt-32 pb-section-padding overflow-hidden bg-surface bg-[url('/images/project-logos/getsitelogo.png')] bg-contain bg-center bg-no-repeat border-b border-glass-stroke">
+        <div class="absolute inset-0 bg-white/60 backdrop-blur-sm z-0"></div>
         <div class="max-w-container-max mx-auto px-8 relative z-10 text-center">
             <h1 class="font-display-lg text-display-lg tracking-tight text-sovereign-blue mb-stack-md">
                 Project Deliverables
             </h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mt-6 bg-surface-container-lowest/70 backdrop-blur-sm p-6 rounded-xl border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
-                The implementation plan of PROSPERO is systematically divided into 5 dedicated Work Packages (WPs). These encompass technology-oriented research, overarching management frameworks, and strategic communication to ensure transparent progress toward European 6G sovereignty.
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto mt-6">
+                PROSPERO is structured into five Work Packages that cover project coordination, UIS 6G architecture, technical design, implementation and validation, and communication, exploitation, and standardisation.
             </p>
         </div>
     </section>
 
     <section class="py-section-padding px-8 bg-surface-container-lowest">
         <div class="max-w-container-max mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-stack-lg" id="wp-summary">
+                <!-- Injected via JS -->
+            </div>
+
             <!-- Tabs -->
             <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-stack-lg" id="wp-tabs">
                 <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-primary transition-all wp-btn active shadow-sm group hover:-translate-y-1" data-wp="wp1">
@@ -25,25 +29,25 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                     <div>
                         <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP1</span>
-                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Project Management</h3>
+                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Management & Coordination</h3>
                     </div>
                 </button>
                 <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp2">
                     <div class="bg-surface-variant p-2 rounded-lg text-on-surface-variant mb-4 group-hover:bg-primary group-hover:text-white transition-colors icon-container">
-                        <span class="material-symbols-outlined">hub</span>
+                        <span class="material-symbols-outlined">architecture</span>
                     </div>
                     <div>
                         <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP2</span>
-                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Network Intelligence</h3>
+                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">UIS Architecture</h3>
                     </div>
                 </button>
                 <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp3">
                     <div class="bg-surface-variant p-2 rounded-lg text-on-surface-variant mb-4 group-hover:bg-primary group-hover:text-white transition-colors icon-container">
-                        <span class="material-symbols-outlined">memory</span>
+                        <span class="material-symbols-outlined">draw</span>
                     </div>
                     <div>
                         <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP3</span>
-                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Compute Continuum</h3>
+                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Design Innovations</h3>
                     </div>
                 </button>
                 <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp4">
@@ -52,7 +56,7 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                     <div>
                         <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP4</span>
-                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Implementation</h3>
+                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Validation</h3>
                     </div>
                 </button>
                 <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp5">
@@ -61,7 +65,7 @@ import Layout from '../layouts/Layout.astro';
                     </div>
                     <div>
                         <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP5</span>
-                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Communication</h3>
+                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Impact & Standards</h3>
                     </div>
                 </button>
             </div>
@@ -76,6 +80,7 @@ import Layout from '../layouts/Layout.astro';
                             <tr class="bg-surface text-on-surface-variant font-label-sm text-label-sm">
                                 <th class="py-4 px-6 font-semibold border-b border-surface-variant rounded-tl-lg">ID</th>
                                 <th class="py-4 px-6 font-semibold border-b border-surface-variant">Deliverable Name</th>
+                                <th class="py-4 px-6 font-semibold border-b border-surface-variant">Lead</th>
                                 <th class="py-4 px-6 font-semibold border-b border-surface-variant">Date</th>
                                 <th class="py-4 px-6 font-semibold border-b border-surface-variant">Status</th>
                                 <th class="py-4 px-6 font-semibold border-b border-surface-variant rounded-tr-lg">Access</th>
@@ -100,10 +105,27 @@ import Layout from '../layouts/Layout.astro';
                 const response = await fetch('/data.json');
                 const data = await response.json();
                 deliverablesData = data.deliverables || {};
+                renderSummary(deliverablesData.summary || []);
                 renderWP('wp1');
             } catch (error) {
                 console.error("Error loading deliverables", error);
             }
+        }
+
+        function renderSummary(summary) {
+            const summaryContainer = document.getElementById('wp-summary');
+            if (!summaryContainer || summary.length === 0) return;
+
+            summaryContainer.innerHTML = summary.map(item => `
+                <article class="bg-white rounded-xl p-5 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-label-sm text-label-sm font-bold text-primary">${item.wp}</span>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant">${item.months}</span>
+                    </div>
+                    <h2 class="font-headline-md text-[17px] leading-[23px] text-sovereign-blue mb-2">${item.title}</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Lead: ${item.lead} · ${item.pm} PMs</p>
+                </article>
+            `).join('');
         }
 
         function renderWP(wpId) {
@@ -111,11 +133,11 @@ import Layout from '../layouts/Layout.astro';
             const title = document.getElementById('wp-title');
             
             const wpInfo = {
-                'wp1': { title: 'WP1: Project Management', icon: 'corporate_fare' },
-                'wp2': { title: 'WP2: Network Intelligence', icon: 'hub' },
-                'wp3': { title: 'WP3: Compute Continuum', icon: 'memory' },
-                'wp4': { title: 'WP4: Implementation', icon: 'build' },
-                'wp5': { title: 'WP5: Communication', icon: 'campaign' }
+                'wp1': { title: 'WP1: Project Management & Coordination', icon: 'corporate_fare' },
+                'wp2': { title: 'WP2: Uniform, Integrated, Simplified 6G System Architecture', icon: 'architecture' },
+                'wp3': { title: 'WP3: Design of UIS Architecture Innovations and Validation Concept', icon: 'draw' },
+                'wp4': { title: 'WP4: Implementation, Viability, and Validation', icon: 'build' },
+                'wp5': { title: 'WP5: Communication, Dissemination, Exploitation, and Standardisation', icon: 'campaign' }
             };
             
             if(title && wpInfo[wpId]) {
@@ -124,7 +146,7 @@ import Layout from '../layouts/Layout.astro';
 
             const items = deliverablesData[wpId] || [];
             if (items.length === 0) {
-                tbody.innerHTML = '<tr><td colspan="5" class="py-8 text-center text-on-surface-variant">No deliverables available for this Work Package yet.</td></tr>';
+                tbody.innerHTML = '<tr><td colspan="6" class="py-8 text-center text-on-surface-variant">No deliverables available for this Work Package yet.</td></tr>';
                 return;
             }
 
@@ -134,14 +156,18 @@ import Layout from '../layouts/Layout.astro';
                 html += `
                     <tr class="hover:bg-surface transition-colors">
                         <td class="py-4 px-6 font-bold text-sovereign-blue">${item.id}</td>
-                        <td class="py-4 px-6">${item.name}</td>
+                        <td class="py-4 px-6">
+                            <span class="block font-bold text-sovereign-blue">${item.name}</span>
+                            <span class="block text-on-surface-variant mt-1">${item.description || ''}</span>
+                        </td>
+                        <td class="py-4 px-6 font-bold text-on-background">${item.lead || '-'}</td>
                         <td class="py-4 px-6">${item.date}</td>
                         <td class="py-4 px-6">
                             <span class="px-3 py-1 rounded-full text-xs font-bold ${statusColor}">${item.status}</span>
                         </td>
                         <td class="py-4 px-6">
                             <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-                                ${item.access === 'Private' ? '🔒' : '🔓'} ${item.access}
+                                ${item.access}
                             </span>
                         </td>
                     </tr>
