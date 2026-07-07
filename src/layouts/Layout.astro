@@ -84,7 +84,7 @@ const { title } = Astro.props;
 						</div>
 					</div>
 				</nav>
-				<!-- CTA removed as requested -->
+			
 				<!-- Mobile Menu Button -->
 				<button class="md:hidden text-primary">
 					<span class="material-symbols-outlined text-2xl">menu</span>
@@ -95,7 +95,8 @@ const { title } = Astro.props;
 		<slot />
 
 		<!-- Footer -->
-		<footer class="bg-primary w-full py-section-padding text-white relative overflow-hidden bg-prospero-texture-minimal-light bg-cover bg-no-repeat bg-center">
+		<footer class="bg-primary w-full py-section-padding text-white relative overflow-hidden">
+			<div class="absolute -inset-2 bg-prospero-texture-minimal-light bg-cover bg-no-repeat bg-center blur-sm opacity-80"></div>
 			<div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-gutter px-8 max-w-container-max mx-auto text-left">
 				<div class="col-span-1 md:col-span-2 space-y-stack-sm">
 					<img src="/images/project-logos/logo-horizontal.png" alt="PROSPERO Logo" class="h-12 w-auto object-contain brightness-0 invert mb-4" />

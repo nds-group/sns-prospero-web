@@ -17,56 +17,52 @@ import Layout from '../layouts/Layout.astro';
 
     <section class="py-section-padding px-8 bg-surface-container-lowest">
         <div class="max-w-container-max mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-stack-lg" id="wp-summary">
-                <!-- Injected via JS -->
-            </div>
-
             <!-- Tabs -->
             <div class="grid grid-cols-1 md:grid-cols-5 gap-4 mb-stack-lg" id="wp-tabs">
-                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-primary transition-all wp-btn active shadow-sm group hover:-translate-y-1" data-wp="wp1">
-                    <div class="bg-eco-surface p-2 rounded-lg text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors">
-                        <span class="material-symbols-outlined">corporate_fare</span>
+                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-36 border-t-4 border-t-primary transition-all wp-btn active shadow-sm group hover:-translate-y-1" data-wp="wp1">
+                    <div class="flex items-center gap-3">
+                        <div class="wp-icon bg-eco-surface p-2 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+                            <span class="material-symbols-outlined">corporate_fare</span>
+                        </div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">WP1</span>
                     </div>
-                    <div>
-                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP1</span>
-                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Management & Coordination</h3>
-                    </div>
+                    <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Management & Coordination</h3>
                 </button>
-                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp2">
-                    <div class="bg-surface-variant p-2 rounded-lg text-on-surface-variant mb-4 group-hover:bg-primary group-hover:text-white transition-colors icon-container">
-                        <span class="material-symbols-outlined">architecture</span>
+                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-36 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp2">
+                    <div class="flex items-center gap-3">
+                        <div class="wp-icon bg-surface-variant p-2 rounded-lg text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-colors icon-container">
+                            <span class="material-symbols-outlined">architecture</span>
+                        </div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">WP2</span>
                     </div>
-                    <div>
-                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP2</span>
-                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">UIS Architecture</h3>
-                    </div>
+                    <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">UIS Architecture</h3>
                 </button>
-                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp3">
-                    <div class="bg-surface-variant p-2 rounded-lg text-on-surface-variant mb-4 group-hover:bg-primary group-hover:text-white transition-colors icon-container">
-                        <span class="material-symbols-outlined">draw</span>
+                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-36 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp3">
+                    <div class="flex items-center gap-3">
+                        <div class="wp-icon bg-surface-variant p-2 rounded-lg text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-colors icon-container">
+                            <span class="material-symbols-outlined">draw</span>
+                        </div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">WP3</span>
                     </div>
-                    <div>
-                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP3</span>
-                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Design Innovations</h3>
-                    </div>
+                    <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Design Innovations</h3>
                 </button>
-                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp4">
-                    <div class="bg-surface-variant p-2 rounded-lg text-on-surface-variant mb-4 group-hover:bg-primary group-hover:text-white transition-colors icon-container">
-                        <span class="material-symbols-outlined">build</span>
+                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-36 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp4">
+                    <div class="flex items-center gap-3">
+                        <div class="wp-icon bg-surface-variant p-2 rounded-lg text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-colors icon-container">
+                            <span class="material-symbols-outlined">build</span>
+                        </div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">WP4</span>
                     </div>
-                    <div>
-                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP4</span>
-                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Validation</h3>
-                    </div>
+                    <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Validation</h3>
                 </button>
-                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-40 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp5">
-                    <div class="bg-surface-variant p-2 rounded-lg text-on-surface-variant mb-4 group-hover:bg-primary group-hover:text-white transition-colors icon-container">
-                        <span class="material-symbols-outlined">campaign</span>
+                <button class="bg-surface rounded-xl p-6 flex flex-col items-start justify-between h-36 border-t-4 border-t-transparent opacity-70 hover:opacity-100 transition-all wp-btn shadow-sm group hover:-translate-y-1" data-wp="wp5">
+                    <div class="flex items-center gap-3">
+                        <div class="wp-icon bg-surface-variant p-2 rounded-lg text-on-surface-variant group-hover:bg-primary group-hover:text-white transition-colors icon-container">
+                            <span class="material-symbols-outlined">campaign</span>
+                        </div>
+                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">WP5</span>
                     </div>
-                    <div>
-                        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-1 block">WP5</span>
-                        <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Impact & Standards</h3>
-                    </div>
+                    <h3 class="font-headline-md text-[18px] leading-[24px] text-sovereign-blue text-left">Impact & Standards</h3>
                 </button>
             </div>
 
@@ -88,7 +84,7 @@ import Layout from '../layouts/Layout.astro';
                         </thead>
                         <tbody id="deliverables-body" class="divide-y divide-surface-variant font-body-md text-body-md text-on-background">
                             <tr>
-                                <td colspan="5" class="py-8 text-center text-on-surface-variant">Loading deliverables...</td>
+                                <td colspan="6" class="py-8 text-center text-on-surface-variant">Loading deliverables...</td>
                             </tr>
                         </tbody>
                     </table>
@@ -105,27 +101,10 @@ import Layout from '../layouts/Layout.astro';
                 const response = await fetch('/data.json');
                 const data = await response.json();
                 deliverablesData = data.deliverables || {};
-                renderSummary(deliverablesData.summary || []);
                 renderWP('wp1');
             } catch (error) {
                 console.error("Error loading deliverables", error);
             }
-        }
-
-        function renderSummary(summary) {
-            const summaryContainer = document.getElementById('wp-summary');
-            if (!summaryContainer || summary.length === 0) return;
-
-            summaryContainer.innerHTML = summary.map(item => `
-                <article class="bg-white rounded-xl p-5 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
-                    <div class="flex items-center justify-between mb-3">
-                        <span class="font-label-sm text-label-sm font-bold text-primary">${item.wp}</span>
-                        <span class="font-label-sm text-label-sm text-on-surface-variant">${item.months}</span>
-                    </div>
-                    <h2 class="font-headline-md text-[17px] leading-[23px] text-sovereign-blue mb-2">${item.title}</h2>
-                    <p class="font-body-md text-body-md text-on-surface-variant">Lead: ${item.lead} · ${item.pm} PMs</p>
-                </article>
-            `).join('');
         }
 
         function renderWP(wpId) {
@@ -185,7 +164,7 @@ import Layout from '../layouts/Layout.astro';
                     btns.forEach(b => {
                         b.classList.remove('border-t-primary', 'opacity-100');
                         b.classList.add('border-t-transparent', 'opacity-70');
-                        const iconContainer = b.querySelector('div');
+                        const iconContainer = b.querySelector('.wp-icon');
                         if (iconContainer) {
                             iconContainer.classList.remove('bg-eco-surface', 'text-primary');
                             iconContainer.classList.add('bg-surface-variant', 'text-on-surface-variant');
@@ -194,7 +173,7 @@ import Layout from '../layouts/Layout.astro';
                     const target = e.currentTarget;
                     target.classList.add('border-t-primary', 'opacity-100');
                     target.classList.remove('border-t-transparent', 'opacity-70');
-                    const activeIconContainer = target.querySelector('div');
+                    const activeIconContainer = target.querySelector('.wp-icon');
                     if (activeIconContainer) {
                         activeIconContainer.classList.add('bg-eco-surface', 'text-primary');
                         activeIconContainer.classList.remove('bg-surface-variant', 'text-on-surface-variant');
