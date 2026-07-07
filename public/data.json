@@ -1,20 +1,7 @@
 {
   "papers": [],
   "posters": [],
-  "news": [
-    {
-      "date": "2026-01-15",
-      "title": "PROSPERO Project Kick-off",
-      "summary": "The PROSPERO project officially started today, aiming to build a uniform and simplified 6G architecture.",
-      "type": "Press Release"
-    },
-    {
-      "date": "2026-04-10",
-      "title": "First Plenary Meeting",
-      "summary": "Partners gathered in Madrid to discuss the initial requirements and the vGSBA framework.",
-      "type": "Event"
-    }
-  ],
+  "news": [],
   "deliverables": {
     "wp1": [
       {"id": "D1.1", "name": "Project handbook", "description": "Outline of project management protocols, communication channels, and primary governance bodies.", "date": "M1", "lead": "TID", "status": "Planned", "access": "SEN"},
