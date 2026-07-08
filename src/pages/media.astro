@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { socialLinks } from '../config/socialLinks';
 ---
 
 <Layout title="News & Media - PROSPERO">
@@ -46,25 +47,19 @@ import Layout from '../layouts/Layout.astro';
                     <hr class="my-stack-md border-surface-variant"/>
                     
                     <h4 class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider mb-4 font-bold">Follow Us</h4>
-                    <div class="flex gap-4">
-                        <a
-                            href="https://www.instagram.com/prospero_sns/"
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="PROSPERO on Instagram"
-                            class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-on-surface-variant"
-                        >
-                            <span class="material-symbols-outlined text-[20px]">photo_camera</span>
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/sns-prospero/"
-                            target="_blank"
-                            rel="noreferrer"
-                            aria-label="PROSPERO on LinkedIn"
-                            class="w-10 h-10 rounded-full bg-surface-variant flex items-center justify-center hover:bg-primary hover:text-white transition-colors text-on-surface-variant"
-                        >
-                            <span class="material-symbols-outlined text-[20px]">business_center</span>
-                        </a>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-3">
+                        {socialLinks.map((link) => (
+                            <a
+                                href={link.href}
+                                target="_blank"
+                                rel="noreferrer"
+                                aria-label={link.label}
+                                class="min-h-11 rounded bg-surface-variant flex items-center gap-2 px-3 py-2 hover:bg-primary hover:text-white transition-colors text-on-surface-variant"
+                            >
+                                <span class="material-symbols-outlined text-[20px]" aria-hidden="true">{link.icon}</span>
+                                <span class="font-label-sm text-label-sm font-bold">{link.name}</span>
+                            </a>
+                        ))}
                     </div>
                 </div>
             </aside>

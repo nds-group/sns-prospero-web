@@ -13,8 +13,9 @@ import '../styles/global.css';
 import { Image } from 'astro:assets';
 import prosperoMark from '../../public/images/project-logos/logo-notext.svg';
 import prosperoFooterLogo from '../../public/images/project-logos/logo-horizontal.png';
-import europeanUnionLogo from '../../public/images/eu-logos/eu.svg';
+import europeanUnionLogo from '../../public/images/eu-logos/eu-white-outline.svg';
 import snsLogo from '../../public/images/eu-logos/6G_sns.png';
+import { socialLinks } from '../config/socialLinks';
 
 interface Props {
 	title: string;
@@ -131,60 +132,56 @@ const { title } = Astro.props;
 		<!-- Footer -->
 		<footer class="bg-primary w-full py-section-padding text-white relative overflow-hidden">
 			<div class="absolute -inset-2 bg-prospero-texture-minimal-light bg-cover bg-no-repeat bg-center blur-sm opacity-80"></div>
-			<div class="relative z-10 grid grid-cols-1 md:grid-cols-4 gap-gutter px-8 max-w-container-max mx-auto text-left">
-				<div class="col-span-1 md:col-span-2 space-y-stack-sm">
-					<Image src={prosperoFooterLogo} alt="PROSPERO Logo" class="h-12 w-auto object-contain brightness-0 invert mb-4" loading="lazy" decoding="async" />
-					<p class="font-body-md text-body-md text-white/80 max-w-sm">
-						© 2026 PROSPERO Project. Co-funded by the European Union under Horizon Europe.
-					</p>
-					<div class="flex flex-wrap gap-3 pt-2">
-						<a
-							class="inline-flex items-center gap-2 font-body-md text-body-md text-white/80 hover:text-white transition-colors"
-							href="https://www.instagram.com/prospero_sns/"
-							target="_blank"
-							rel="noreferrer"
-							aria-label="PROSPERO on Instagram"
-						>
-							<span class="material-symbols-outlined text-[20px]">photo_camera</span>
-							@prospero_sns
-						</a>
-						<a
-							class="inline-flex items-center gap-2 font-body-md text-body-md text-white/80 hover:text-white transition-colors"
-							href="https://www.linkedin.com/in/sns-prospero/"
-							target="_blank"
-							rel="noreferrer"
-							aria-label="PROSPERO on LinkedIn"
-						>
-							<span class="material-symbols-outlined text-[20px]">business_center</span>
-							LinkedIn
-						</a>
-					</div>
-					<div class="flex gap-4 pt-4">
-						<div class="h-12 w-24 flex items-center justify-center">
-							<Image src={europeanUnionLogo} alt="European Union Logo" class="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
+			<div class="relative z-10 px-8 max-w-container-max mx-auto text-left">
+				<div class="flex flex-col gap-gutter md:flex-row md:items-start md:justify-between">
+					<div class="space-y-stack-sm md:max-w-xl">
+						<Image src={prosperoFooterLogo} alt="PROSPERO Logo" class="h-12 w-auto object-contain brightness-0 invert mb-4" loading="lazy" decoding="async" />
+						<p class="font-body-md text-body-md text-white/80 max-w-sm">
+							© 2026 PROSPERO Project. Co-funded by the European Union under Horizon Europe.
+						</p>
+						<div class="flex flex-wrap gap-x-4 gap-y-2 pt-2">
+							{socialLinks.map((link) => (
+								<a
+									class="inline-flex items-center gap-2 font-body-md text-body-md text-white/80 hover:text-white transition-colors"
+									href={link.href}
+									target="_blank"
+									rel="noreferrer"
+									aria-label={link.label}
+								>
+									<span class="material-symbols-outlined text-[20px]" aria-hidden="true">{link.icon}</span>
+									{link.name}
+								</a>
+							))}
 						</div>
-						<div class="h-12 w-24 flex items-center justify-center">
-							<Image src={snsLogo} alt="Smart Networks and Services Joint Undertaking Logo" class="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
+					</div>
+					<div class="grid grid-cols-1 gap-gutter sm:grid-cols-2 md:ml-auto md:gap-16">
+						<div class="space-y-stack-sm md:w-40">
+							<h5 class="font-label-sm text-label-sm text-white font-bold">Project</h5>
+							<ul class="space-y-2">
+								<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/overview">Overview</a></li>
+								<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/objectives">Objectives & Impact</a></li>
+								<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/consortium">Consortium</a></li>
+								<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/media">News & Events</a></li>
+							</ul>
+						</div>
+						<div class="space-y-stack-sm md:w-40">
+							<h5 class="font-label-sm text-label-sm text-white font-bold">Documentation</h5>
+							<ul class="space-y-2">
+								<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/deliverables">Deliverables</a></li>
+								<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/publications">Publications</a></li>
+								<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/datasets">Datasets</a></li>
+								<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/open-source">Open-Source Code</a></li>
+							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="space-y-stack-sm">
-					<h5 class="font-label-sm text-label-sm text-white font-bold">Project</h5>
-					<ul class="space-y-2">
-						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/overview">Overview</a></li>
-						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/objectives">Objectives & Impact</a></li>
-						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/consortium">Consortium</a></li>
-						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/media">News & Events</a></li>
-					</ul>
-				</div>
-				<div class="space-y-stack-sm">
-					<h5 class="font-label-sm text-label-sm text-white font-bold">Documentation</h5>
-					<ul class="space-y-2">
-						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/deliverables">Deliverables</a></li>
-						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/publications">Publications</a></li>
-						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/datasets">Datasets</a></li>
-						<li><a class="font-body-md text-body-md text-white/80 hover:text-white transition-colors hover:opacity-100" href="/open-source">Open-Source Code</a></li>
-					</ul>
+				<div class="mt-12 flex w-full items-center justify-between gap-8 border-t border-white/20 pt-8">
+					<div class="h-14 w-32 flex items-center justify-start">
+						<Image src={europeanUnionLogo} alt="European Union Logo" class="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
+					</div>
+					<div class="h-14 w-40 flex items-center justify-end">
+						<Image src={snsLogo} alt="Smart Networks and Services Joint Undertaking Logo" class="max-h-full max-w-full object-contain brightness-0 invert" loading="lazy" decoding="async" />
+					</div>
 				</div>
 			</div>
 		</footer>
