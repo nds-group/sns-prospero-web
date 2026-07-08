@@ -134,7 +134,7 @@ const { title } = Astro.props;
 			<div class="absolute -inset-2 bg-prospero-texture-minimal-light bg-cover bg-no-repeat bg-center blur-sm opacity-80"></div>
 			<div class="relative z-10 px-8 max-w-container-max mx-auto text-left">
 				<div class="flex flex-col gap-gutter md:flex-row md:items-start md:justify-between">
-					<div class="space-y-stack-sm md:max-w-xl">
+					<div class="space-y-stack-sm md:w-[min(34rem,50%)]">
 						<Image src={prosperoFooterLogo} alt="PROSPERO Logo" class="h-12 w-auto object-contain brightness-0 invert mb-4" loading="lazy" decoding="async" />
 						<p class="font-body-md text-body-md text-white/80 max-w-sm">
 							© 2026 PROSPERO Project. Co-funded by the European Union under Horizon Europe.
@@ -176,8 +176,8 @@ const { title } = Astro.props;
 					</div>
 				</div>
 				<div class="mt-12 flex w-full items-center justify-between gap-8 border-t border-white/20 pt-8">
-					<div class="h-14 w-32 flex items-center justify-start">
-						<Image src={europeanUnionLogo} alt="European Union Logo" class="max-h-full max-w-full object-contain" loading="lazy" decoding="async" />
+					<div class="md:w-[min(34rem,50%)] flex justify-start">
+						<Image src={europeanUnionLogo} alt="European Union Logo" class="h-14 w-32 object-contain object-left" loading="lazy" decoding="async" />
 					</div>
 					<div class="h-14 w-40 flex items-center justify-end">
 						<Image src={snsLogo} alt="Smart Networks and Services Joint Undertaking Logo" class="max-h-full max-w-full object-contain brightness-0 invert" loading="lazy" decoding="async" />
