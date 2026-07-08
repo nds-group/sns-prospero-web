@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import methodologyScheme from '../../public/images/stock/methodology-schem.png';
 
 const phases = [
     {
@@ -73,11 +75,12 @@ const workPackages = [
             </div>
             <figure class="lg:col-span-2 lg:order-3">
                 <div class="overflow-x-auto rounded-lg border border-glass-stroke bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
-                    <img
-                        src="/images/stock/methodology-schem.png"
+                    <Image
+                        src={methodologyScheme}
                         alt="PROSPERO methodology scheme showing iterative project phases across the work packages"
                         class="h-auto w-full min-w-[820px] md:min-w-0"
                         loading="lazy"
+                        decoding="async"
                     />
                 </div>
                 <figcaption class="mt-4 space-y-3 font-body-md text-body-md text-on-surface-variant">

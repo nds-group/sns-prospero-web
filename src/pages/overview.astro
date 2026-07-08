@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import visionScheme from '../../public/images/stock/vision-schem.png';
+import architecturalModel from '../../public/images/stock/architectural-model.png';
 ---
 
 <Layout title="Overview - PROSPERO">
@@ -23,11 +26,12 @@ import Layout from '../layouts/Layout.astro';
             </p>
             <figure class="pt-stack-md">
                 <div class="overflow-x-auto rounded-lg border border-glass-stroke bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
-                    <img
-                        src="/images/stock/vision-schem.png"
+                    <Image
+                        src={visionScheme}
                         alt="PROSPERO vision scheme showing the project pillars and their relationship to 6G network evolution"
                         class="h-auto w-full min-w-[720px] md:min-w-0"
                         loading="lazy"
+                        decoding="async"
                     />
                 </div>
             </figure>
@@ -54,11 +58,12 @@ import Layout from '../layouts/Layout.astro';
             </div>
             <figure>
                 <div class="overflow-x-auto rounded-lg border border-glass-stroke bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
-                    <img
-                        src="/images/stock/architectural-model.png"
+                    <Image
+                        src={architecturalModel}
                         alt="PROSPERO complete 6G architectural model connecting UIS, vGSBA, CCL, eZTL, UTH, and AI-6G layers"
                         class="h-auto w-full min-w-[980px] md:min-w-0"
                         loading="lazy"
+                        decoding="async"
                     />
                 </div>
             </figure>

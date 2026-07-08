@@ -1,5 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import prosperoHeroLogo from '../../public/images/project-logos/logo-desc-horizontal.svg';
 ---
 
 <Layout title="PROSPERO - 6G Networks">
@@ -9,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="absolute inset-0 bg-white/60 backdrop-blur-sm z-0"></div>
         
         <div class="relative z-10 max-w-container-max mx-auto px-8 flex justify-center items-center py-12">
-            <img src="/images/project-logos/logo-desc-horizontal.svg" alt="PROSPERO: Programmable and Scalable Operations for Efficient, Resource-Aware Architecture in 6G Networks" class="w-full max-w-3xl h-auto drop-shadow-[0_10px_30px_rgba(0,0,0,0.1)]" />
+            <Image src={prosperoHeroLogo} alt="PROSPERO: Programmable and Scalable Operations for Efficient, Resource-Aware Architecture in 6G Networks" class="w-full max-w-3xl h-auto drop-shadow-[0_10px_30px_rgba(0,0,0,0.1)]" decoding="async" fetchpriority="high" />
         </div>
     </section>
 
@@ -94,7 +96,7 @@ import Layout from '../layouts/Layout.astro';
                     data.partners.forEach((p: any) => {
                         html += `
                             <div class="w-32 md:w-40 h-20 flex items-center justify-center transition-all duration-300 grayscale hover:grayscale-0 relative group">
-                                <img src="${p.logo}" alt="${p.name} logo" class="max-w-[120px] max-h-10 object-contain mx-auto" />
+                                <img src="${p.logo}" alt="${p.name} logo" class="max-w-[120px] max-h-10 object-contain mx-auto" loading="lazy" decoding="async" />
                                 <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-sovereign-blue text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap z-20">
                                     ${p.name}
                                 </div>
