@@ -7,7 +7,7 @@ const phases = [
     {
         step: '1',
         title: 'Requirements and Architecture',
-        body: 'WP2 starts from stakeholder needs, business cases, and standardisation input to define requirements for UIS, AI-6G, and UTH. These requirements guide the design of modules, interfaces, and operational procedures.',
+        body: 'WP2 starts from stakeholder needs, business cases, and standardisation input to define requirements for the project architecture, AI-6G, and cross-domain operation. These requirements guide the design of modules, interfaces, and operational procedures.',
     },
     {
         step: '2',
@@ -51,14 +51,9 @@ const businessCases = [
 
 const keyConcepts = [
     {
-        acronym: 'UIS',
-        title: 'Uniform, Integrated, Simplified architecture',
-        body: 'The core architectural tenet of PROSPERO. UIS creates common abstractions and interfaces across RAN, core, transport, and edge compute so that 6G can be managed as a coherent, modular, and evolvable system.',
-    },
-    {
-        acronym: 'vGSBA',
-        title: 'Virtualized Global Service-Based Architecture',
-        body: 'An evolution of 5G SBA and ORIGAMI GSBA that extends service-based principles across network and computing domains, enabling tailored virtual network instances and programmable codelets.',
+        acronym: 'GSBA',
+        title: 'Global Service-Based Architecture',
+        body: 'A service-based architecture that extends SBA principles across network and computing domains. PROSPERO builds on this concept towards virtualized, programmable service instances and codelets.',
     },
     {
         acronym: 'CCL',
@@ -66,25 +61,30 @@ const keyConcepts = [
         body: 'A unified abstraction fabric for heterogeneous compute resources, from CPUs and GPUs to accelerators. It supports software RAN, resource pooling, energy efficiency, and distributed AI execution.',
     },
     {
-        acronym: 'eZTL',
-        title: 'Evolved Zero Trust Layer',
-        body: 'A framework for secure, automated, and auditable interactions among entities in open distributed networks, combining verifiable trust, trusted execution, and programmable in-network defence.',
-    },
-    {
-        acronym: 'UTH',
-        title: 'Unified Telco HyperFabric',
-        body: 'A model for federating network and compute resources across operators, cloud providers, enterprises, and service providers, enabling cross-domain services, dynamic marketplaces, and coordinated resilience.',
+        acronym: 'ZTL',
+        title: 'Zero Trust Layer',
+        body: 'A layer for secure and auditable interactions among entities in open distributed networks. PROSPERO extends this concept with hardware-anchored trust, trusted execution, and programmable in-network defence.',
     },
     {
         acronym: 'AI-6G',
         title: 'Network-native AI framework',
         body: 'A frugal, purpose-driven AI approach for 6G operations. PROSPERO organises it into AI-for-6G for automation, AI-and-6G for shared compute, and AI-on-6G for services built on network data.',
     },
+    {
+        acronym: 'KPIs',
+        title: 'Technical and business indicators',
+        body: 'Measures used to check whether each technical solution meets its expected performance contribution and supports the target business cases.',
+    },
+    {
+        acronym: 'PoC',
+        title: 'Proof-of-Concept evaluation',
+        body: 'A dedicated validation activity used to test the practical viability of PROSPERO technical solutions against the project KPIs.',
+    },
 ];
 
 const validationFlow = [
     ['Strategic paradigms', 'Architectural simplification, global operation, AI-6G integration, sustainable network programming, and seamless network management.'],
-    ['Technical solutions', 'AI/ML algorithms, analytical models, optimisation frameworks, and control systems designed around the UIS architecture.'],
+    ['Technical solutions', 'AI/ML algorithms, analytical models, optimisation frameworks, and control systems designed around the project architectural components.'],
     ['PoC evaluations', 'Dedicated proof-of-concept validations measure technical performance and practical viability against project KPIs.'],
     ['Business feedback', 'Results are checked against TCO reduction, new revenue opportunities, and resiliency to refine or validate the solutions.'],
 ];
@@ -116,14 +116,14 @@ const strategicParadigms = [
                     <div class="overflow-x-auto rounded-lg border border-glass-stroke bg-white p-4 shadow-[0_4px_20px_rgba(0,0,0,0.03)]">
                         <Image
                             src={methodologyScheme}
-                            alt="PROSPERO methodology scheme showing business cases, strategic paradigms, architectural tenets, technical solutions, KPIs, and proof-of-concept validation"
+                            alt="PROSPERO methodology scheme showing business cases, strategic paradigms, architectural components, technical solutions, KPIs, and proof-of-concept validation"
                             class="h-auto w-full min-w-[820px] md:min-w-0"
                             loading="lazy"
                             decoding="async"
                         />
                     </div>
                     <figcaption class="mt-4 font-body-md text-body-md text-on-surface-variant">
-                        PROSPERO follows a methodological loop that links business cases, strategic paradigms, architectural tenets, technical solutions, KPIs, and proof-of-concept evaluations.
+                        PROSPERO follows a methodological loop that links business cases, strategic paradigms, architectural components, technical solutions, KPIs, and proof-of-concept evaluations.
                     </figcaption>
                 </figure>
 
@@ -134,7 +134,7 @@ const strategicParadigms = [
                             PROSPERO organises its methodology around three business cases: TCO reduction, new business opportunities, and network resiliency.
                         </p>
                         <p>
-                            These business cases are addressed through five strategic paradigms that build on the project architectural tenets and are validated through measurable technical and business KPIs.
+                            These business cases are addressed through five strategic paradigms that build on the project architectural components and are validated through measurable technical and business KPIs.
                         </p>
                     </div>
                 </div>
