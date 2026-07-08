@@ -84,10 +84,41 @@ const { title } = Astro.props;
 				</nav>
 			
 				<!-- Mobile Menu Button -->
-				<button class="md:hidden text-primary">
-					<span class="material-symbols-outlined text-2xl">menu</span>
+				<button
+					id="mobile-menu-button"
+					class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded text-primary hover:bg-eco-surface/70 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-surface"
+					type="button"
+					aria-controls="mobile-menu"
+					aria-expanded="false"
+					aria-label="Open navigation menu"
+				>
+					<span class="material-symbols-outlined text-2xl" aria-hidden="true">menu</span>
 				</button>
 			</div>
+			<nav
+				id="mobile-menu"
+				class="hidden md:hidden border-t border-glass-stroke bg-surface/95 px-8 py-4 shadow-sm"
+				aria-label="Mobile navigation"
+			>
+				<div class="flex flex-col gap-1 max-w-container-max mx-auto">
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/">Home</a>
+					<p class="px-3 pt-3 pb-1 text-label-sm font-bold uppercase text-primary">About</p>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/overview">Overview</a>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/objectives">Objectives & Impact</a>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/methodology">Methodology</a>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/consortium">Consortium</a>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/ethics">Ethics</a>
+					<p class="px-3 pt-3 pb-1 text-label-sm font-bold uppercase text-primary">Documentation</p>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/deliverables">Deliverables</a>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/publications">Publications</a>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/datasets">Datasets</a>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/open-source">Open-Source Code</a>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/media">News & Events</a>
+					<p class="px-3 pt-3 pb-1 text-label-sm font-bold uppercase text-primary">Media</p>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/press">Press</a>
+					<a class="rounded px-3 py-2 text-on-surface-variant hover:bg-eco-surface/60 hover:text-primary transition-colors" href="/videos">Videos</a>
+				</div>
+			</nav>
 		</header>
 
 		<slot />
@@ -152,5 +183,36 @@ const { title } = Astro.props;
 				</div>
 			</div>
 		</footer>
+		<script>
+			const mobileMenuButton = document.querySelector<HTMLButtonElement>('#mobile-menu-button');
+			const mobileMenu = document.querySelector<HTMLElement>('#mobile-menu');
+			const mobileMenuIcon = mobileMenuButton?.querySelector('.material-symbols-outlined');
+
+			const setMobileMenuOpen = (isOpen: boolean) => {
+				if (!mobileMenuButton || !mobileMenu || !mobileMenuIcon) return;
+
+				mobileMenu.classList.toggle('hidden', !isOpen);
+				mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
+				mobileMenuButton.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+				mobileMenuIcon.textContent = isOpen ? 'close' : 'menu';
+			};
+
+			mobileMenuButton?.addEventListener('click', () => {
+				const isOpen = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+				setMobileMenuOpen(!isOpen);
+			});
+
+			mobileMenu?.addEventListener('click', (event) => {
+				if ((event.target as HTMLElement).closest('a')) {
+					setMobileMenuOpen(false);
+				}
+			});
+
+			window.addEventListener('resize', () => {
+				if (window.matchMedia('(min-width: 768px)').matches) {
+					setMobileMenuOpen(false);
+				}
+			});
+		</script>
 	</body>
 </html>

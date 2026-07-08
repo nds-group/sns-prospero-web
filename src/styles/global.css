@@ -109,6 +109,28 @@
     font-weight: 600;
 }
 
+.text-display-lg {
+    font-size: 40px;
+    line-height: 48px;
+}
+
+.text-headline-lg {
+    font-size: 32px;
+    line-height: 40px;
+}
+
+@media (min-width: 768px) {
+    .text-display-lg {
+        font-size: 64px;
+        line-height: 72px;
+    }
+
+    .text-headline-lg {
+        font-size: 40px;
+        line-height: 48px;
+    }
+}
+
 @utility bg-prospero-texture {
     background-image: url('/images/prospero-texture.svg?v=2');
     background-size: 800px 800px;
