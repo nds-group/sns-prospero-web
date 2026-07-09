@@ -1,7 +1,16 @@
 {
   "papers": [],
   "posters": [],
-  "news": [],
+  "news": [
+    {
+      "date": "July 9, 2026",
+      "type": "Event",
+      "title": "PROSPERO Project Kicks Off in Madrid",
+      "summary": "The 6G SNS PROSPERO Project, funded by the European Commission, has launched with its first plenary meeting at Universidad Carlos III de Madrid. Over the next three years, the consortium will design architectural solutions to break current 5G deployment lock-in, enable new revenue streams and services, and support an affordable, reliable, and resilient transition toward 6G.",
+      "thumbnail": "/images/media/260708-prospero-kicking-off-thumb.webp",
+      "link": "https://www.linkedin.com/in/sns-prospero/"
+    }
+  ],
   "deliverables": {
     "wp1": [
       {"id": "D1.1", "name": "Project handbook", "description": "Outline of project management protocols, communication channels, and primary governance bodies.", "date": "M1", "lead": "TID", "status": "Planned", "access": "SEN"},
