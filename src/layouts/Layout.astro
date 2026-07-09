@@ -13,7 +13,7 @@ import '../styles/global.css';
 import { Image } from 'astro:assets';
 import prosperoMark from '../../public/images/project-logos/logo-notext.svg';
 import prosperoFooterLogo from '../../public/images/project-logos/logo-horizontal.png';
-import europeanUnionLogo from '../../public/images/eu-logos/eu-white-outline.svg';
+import europeanUnionLogo from '../../public/images/eu-logos/EN_Co-fundedbytheEU_RGB_WHITE Outline.png';
 import snsLogo from '../../public/images/eu-logos/6G_sns.png';
 import { socialLinks } from '../config/socialLinks';
 
@@ -136,9 +136,6 @@ const { title } = Astro.props;
 				<div class="flex flex-col gap-gutter md:flex-row md:items-start md:justify-between">
 					<div class="space-y-stack-sm md:w-[min(34rem,50%)]">
 						<Image src={prosperoFooterLogo} alt="PROSPERO Logo" class="h-12 w-auto object-contain brightness-0 invert mb-4" loading="lazy" decoding="async" />
-						<p class="font-body-md text-body-md text-white/80 max-w-sm">
-							© 2026 PROSPERO Project. Co-funded by the European Union under Horizon Europe.
-						</p>
 						<div class="flex flex-wrap gap-x-4 gap-y-2 pt-2">
 							{socialLinks.map((link) => (
 								<a
@@ -175,12 +172,16 @@ const { title } = Astro.props;
 						</div>
 					</div>
 				</div>
-				<div class="mt-12 flex w-full items-center justify-between gap-8 border-t border-white/20 pt-8">
-					<div class="md:w-[min(34rem,50%)] flex justify-start">
-						<Image src={europeanUnionLogo} alt="European Union Logo" class="h-14 w-32 object-contain object-left" loading="lazy" decoding="async" />
+				<div class="mt-12 grid w-full grid-cols-2 items-center gap-x-6 gap-y-5 border-t border-white/20 pt-8 md:grid-cols-[minmax(15rem,1fr)_minmax(18rem,30rem)_minmax(10rem,1fr)] md:gap-8">
+					<div class="order-1 flex min-w-0 justify-start">
+						<Image src={europeanUnionLogo} alt="Co-funded by the European Union" class="h-12 w-auto max-w-full object-contain object-left sm:h-14" loading="lazy" decoding="async" />
 					</div>
-					<div class="h-14 w-40 flex items-center justify-end">
-						<Image src={snsLogo} alt="Smart Networks and Services Joint Undertaking Logo" class="max-h-full max-w-full object-contain brightness-0 invert" loading="lazy" decoding="async" />
+					<p class="order-3 col-span-2 mx-auto max-w-2xl text-center font-body-md text-[11px] leading-[1.45] text-white/70 sm:text-xs sm:leading-5 md:order-2 md:col-span-1 md:max-w-[30rem] md:px-2">
+						<span class="block font-semibold text-white/85">© 2026 PROSPERO</span>
+						<span class="block">This project has received funding from the Smart Networks and Services Joint Undertaking (SNS JU) under the European Union’s Horizon Europe research and innovation programme under Grant Agreement No 101293102.</span>
+					</p>
+					<div class="order-2 flex h-12 min-w-0 items-center justify-end sm:h-14 md:order-3">
+						<Image src={snsLogo} alt="Smart Networks and Services Joint Undertaking Logo" class="max-h-full w-auto max-w-[9rem] object-contain brightness-0 invert sm:max-w-[10rem]" loading="lazy" decoding="async" />
 					</div>
 				</div>
 			</div>
