@@ -20,9 +20,17 @@ import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
 	title: string;
+	description?: string;
+	image?: string;
 }
 
-const { title } = Astro.props;
+const defaultDescription =
+	'PROSPERO advances sustainable, secure, and AI-native 6G networks through simplified architecture, resource-aware operations, and European collaboration.';
+const defaultSocialImage = '/images/og-image.jpg';
+const { title, description = defaultDescription, image = defaultSocialImage } = Astro.props;
+const baseUrl = Astro.site ?? new URL(Astro.url.origin);
+const canonicalUrl = new URL(Astro.url.pathname, baseUrl);
+const socialImageUrl = new URL(image, baseUrl);
 ---
 
 <!doctype html>
@@ -43,9 +51,22 @@ const { title } = Astro.props;
 			});
 		</script>
 		<meta charset="UTF-8" />
-		<meta name="description" content="PROSPERO Project - Horizon Europe 6G Networks" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="canonical" href={canonicalUrl.href} />
 		<link rel="icon" type="image/svg+xml" href="/images/project-logos/logo-notext.svg" />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="PROSPERO" />
+		<meta property="og:locale" content="en_US" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:url" content={canonicalUrl.href} />
+		<meta property="og:image" content={socialImageUrl.href} />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:site" content="@sns_prospero" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={socialImageUrl.href} />
 		<title>{title}</title>
 		
 	</head>
