@@ -1,0 +1,21 @@
+{
+  "name": "PROSPERO - 6G Networks",
+  "short_name": "PROSPERO",
+  "description": "Sovereign, sustainable and AI-native 6G networks for Europe.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0d564e",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
