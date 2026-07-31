@@ -1,0 +1,357 @@
+---
+import {
+	CONSENT_STORAGE_KEY,
+	CONSENT_MAX_AGE_DAYS,
+	CONSENT_VERSION,
+	GOOGLE_ANALYTICS_ID,
+	consentCategories,
+} from '../config/consent';
+---
+
+<div
+	id="cookie-consent"
+	data-storage-key={CONSENT_STORAGE_KEY}
+	data-version={CONSENT_VERSION}
+	data-max-age-days={CONSENT_MAX_AGE_DAYS}
+	data-google-analytics-id={GOOGLE_ANALYTICS_ID}
+	hidden
+>
+	<section
+		id="cookie-consent-banner"
+		class="fixed inset-x-4 bottom-4 z-[100] mx-auto max-w-5xl rounded-2xl border border-outline-variant bg-white p-5 shadow-[0_20px_60px_rgba(11,46,89,0.25)] sm:p-6"
+		role="region"
+		aria-labelledby="cookie-consent-title"
+		aria-describedby="cookie-consent-description"
+		hidden
+	>
+		<div class="flex flex-col gap-5 lg:flex-row lg:items-center lg:justify-between">
+			<div class="max-w-2xl">
+				<div class="mb-2 flex items-center gap-3">
+					<span class="material-symbols-outlined text-primary" aria-hidden="true">cookie</span>
+					<h2 id="cookie-consent-title" class="font-headline-md text-xl font-bold text-sovereign-blue">
+						Your privacy choices
+					</h2>
+				</div>
+				<p id="cookie-consent-description" class="text-sm leading-6 text-on-surface-variant sm:text-base">
+					We use local storage to remember your choice. With your permission, we also use Google
+					Analytics cookies to measure visits and improve this website. Analytics will not load unless
+					you accept it.
+				</p>
+				<a class="mt-2 inline-block text-sm font-semibold text-primary underline underline-offset-4 hover:text-sovereign-blue" href="/cookies">
+					Read our Cookie Policy
+				</a>
+			</div>
+			<div class="grid shrink-0 gap-2 sm:grid-cols-3 lg:grid-cols-1 xl:grid-cols-3">
+				<button
+					type="button"
+					class="min-h-11 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-sovereign-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+					data-consent-action="reject"
+				>
+					Reject optional
+				</button>
+				<button
+					type="button"
+					class="min-h-11 rounded-lg border border-primary px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-eco-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+					data-consent-action="customize"
+				>
+					Manage choices
+				</button>
+				<button
+					type="button"
+					class="min-h-11 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-sovereign-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+					data-consent-action="accept"
+				>
+					Accept all
+				</button>
+			</div>
+		</div>
+	</section>
+
+	<dialog
+		id="cookie-preferences-dialog"
+		class="m-auto w-[min(42rem,calc(100%-2rem))] rounded-2xl border border-outline-variant bg-white p-0 text-on-surface shadow-[0_24px_80px_rgba(11,46,89,0.3)]"
+		aria-labelledby="cookie-preferences-title"
+		aria-describedby="cookie-preferences-description"
+	>
+		<div class="max-h-[min(44rem,calc(100vh-2rem))] overflow-y-auto p-6 sm:p-8">
+			<div class="mb-5 flex items-start justify-between gap-4">
+				<div>
+					<h2 id="cookie-preferences-title" class="font-headline-md text-2xl font-bold text-sovereign-blue">
+						Cookie preferences
+					</h2>
+					<p id="cookie-preferences-description" class="mt-2 text-sm leading-6 text-on-surface-variant">
+						Choose which optional technologies PROSPERO may use. You can change your choice at any
+						time through “Cookie settings” in the footer.
+					</p>
+				</div>
+				<button
+					type="button"
+					class="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-on-surface-variant hover:bg-surface-container focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+					data-consent-close
+					aria-label="Close cookie preferences"
+				>
+					<span class="material-symbols-outlined" aria-hidden="true">close</span>
+				</button>
+			</div>
+
+			<div class="space-y-3">
+				{consentCategories.map((category) => (
+					<div class="rounded-xl border border-outline-variant p-4 sm:p-5">
+						<div class="flex items-start justify-between gap-5">
+							<div>
+								<h3 class="font-semibold text-sovereign-blue">{category.title}</h3>
+								<p class="mt-1 text-sm leading-6 text-on-surface-variant">{category.description}</p>
+							</div>
+							<label class="relative mt-1 inline-flex min-h-7 shrink-0 items-center">
+								<span class="sr-only">{category.title}</span>
+								<input
+									type="checkbox"
+									class="peer h-6 w-11 cursor-pointer appearance-none rounded-full bg-outline-variant transition-colors checked:bg-primary disabled:cursor-not-allowed disabled:opacity-70"
+									data-consent-category={category.id}
+									checked={category.required}
+									disabled={category.required}
+								/>
+								<span class="pointer-events-none absolute left-1 h-4 w-4 rounded-full bg-white shadow transition-transform peer-checked:translate-x-5"></span>
+							</label>
+						</div>
+					</div>
+				))}
+			</div>
+
+			<p class="mt-4 text-xs leading-5 text-on-surface-variant">
+				Google may process analytics data outside the European Economic Area under its applicable
+				data-transfer safeguards. See the <a
+					class="font-semibold text-primary underline underline-offset-2"
+					href="https://business.safety.google/privacy/"
+					target="_blank"
+					rel="noreferrer"
+				>Google Business Data Responsibility site</a>.
+			</p>
+
+			<div class="mt-6 grid gap-2 sm:grid-cols-3">
+				<button
+					type="button"
+					class="min-h-11 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-sovereign-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+					data-consent-action="reject"
+				>
+					Reject optional
+				</button>
+				<button
+					type="button"
+					class="min-h-11 rounded-lg border border-primary px-4 py-2 text-sm font-semibold text-primary hover:bg-eco-surface focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+					data-consent-action="save"
+				>
+					Save selection
+				</button>
+				<button
+					type="button"
+					class="min-h-11 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-sovereign-blue focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+					data-consent-action="accept"
+				>
+					Accept all
+				</button>
+			</div>
+		</div>
+	</dialog>
+</div>
+
+<style>
+	#cookie-preferences-dialog::backdrop {
+		background: rgba(11, 46, 89, 0.56);
+		backdrop-filter: blur(3px);
+	}
+</style>
+
+<script>
+	type ConsentPreferences = Record<string, boolean>;
+	type StoredConsent = {
+		version: number;
+		updatedAt: string;
+		expiresAt: string;
+		preferences: ConsentPreferences;
+	};
+
+	const root = document.querySelector<HTMLElement>('#cookie-consent');
+
+	if (root) {
+		const storageKey = root.dataset.storageKey ?? 'prospero-cookie-consent';
+		const consentVersion = Number(root.dataset.version ?? '1');
+		const consentMaxAgeDays = Number(root.dataset.maxAgeDays ?? '365');
+		const googleAnalyticsId = root.dataset.googleAnalyticsId;
+		const banner = root.querySelector<HTMLElement>('#cookie-consent-banner');
+		const dialog = root.querySelector<HTMLDialogElement>('#cookie-preferences-dialog');
+		const settingsButton = document.querySelector<HTMLButtonElement>('#cookie-settings-button');
+		const categoryInputs = Array.from(
+			root.querySelectorAll<HTMLInputElement>('[data-consent-category]'),
+		);
+
+		let currentPreferences: ConsentPreferences = { necessary: true, analytics: false };
+
+		const readConsent = (): StoredConsent | null => {
+			try {
+				const value = localStorage.getItem(storageKey);
+				if (!value) return null;
+
+				const parsed = JSON.parse(value) as StoredConsent;
+				if (
+					parsed.version !== consentVersion ||
+					!parsed.expiresAt ||
+					new Date(parsed.expiresAt).getTime() <= Date.now() ||
+					!parsed.preferences ||
+					typeof parsed.preferences.analytics !== 'boolean'
+				) {
+					return null;
+				}
+
+				return parsed;
+			} catch {
+				return null;
+			}
+		};
+
+		const writeConsent = (preferences: ConsentPreferences) => {
+			const storedConsent: StoredConsent = {
+				version: consentVersion,
+				updatedAt: new Date().toISOString(),
+				expiresAt: new Date(
+					Date.now() + consentMaxAgeDays * 24 * 60 * 60 * 1000,
+				).toISOString(),
+				preferences,
+			};
+
+			try {
+				localStorage.setItem(storageKey, JSON.stringify(storedConsent));
+			} catch {
+				// Consent remains valid for the current page when storage is unavailable.
+			}
+		};
+
+		const setGoogleConsent = (granted: boolean) => {
+			window.gtag?.('consent', 'update', {
+				analytics_storage: granted ? 'granted' : 'denied',
+				ad_storage: 'denied',
+				ad_user_data: 'denied',
+				ad_personalization: 'denied',
+			});
+		};
+
+		const loadGoogleAnalytics = () => {
+			if (!googleAnalyticsId || document.querySelector('#prospero-google-analytics')) return;
+
+			setGoogleConsent(true);
+			window.gtag?.('js', new Date());
+			window.gtag?.('config', googleAnalyticsId);
+
+			const script = document.createElement('script');
+			script.id = 'prospero-google-analytics';
+			script.async = true;
+			script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(googleAnalyticsId)}`;
+			document.head.append(script);
+		};
+
+		const deleteAnalyticsCookies = () => {
+			const analyticsCookiePrefixes = ['_ga', '_gid', '_gat', '_gac_'];
+			const hostname = window.location.hostname;
+			const domainVariants = ['', hostname, `.${hostname}`, `.${hostname.replace(/^www\./, '')}`];
+
+			document.cookie.split(';').forEach((cookie) => {
+				const name = cookie.split('=')[0]?.trim();
+				if (!name || !analyticsCookiePrefixes.some((prefix) => name.startsWith(prefix))) return;
+
+				domainVariants.forEach((domain) => {
+					const domainAttribute = domain ? `; domain=${domain}` : '';
+					document.cookie = `${name}=; Max-Age=0; path=/${domainAttribute}; SameSite=Lax`;
+				});
+			});
+		};
+
+		const announceConsent = () => {
+			document.dispatchEvent(
+				new CustomEvent('prospero:consent-changed', {
+					detail: { preferences: { ...currentPreferences } },
+				}),
+			);
+		};
+
+		const applyConsent = (preferences: ConsentPreferences, persist = true) => {
+			currentPreferences = { ...preferences, necessary: true };
+
+			if (persist) writeConsent(currentPreferences);
+			if (currentPreferences.analytics) {
+				loadGoogleAnalytics();
+			} else {
+				setGoogleConsent(false);
+				deleteAnalyticsCookies();
+			}
+
+			categoryInputs.forEach((input) => {
+				const category = input.dataset.consentCategory;
+				input.checked = category === 'necessary' || Boolean(category && currentPreferences[category]);
+			});
+
+			if (banner) banner.hidden = true;
+			if (settingsButton) settingsButton.hidden = false;
+			dialog?.close();
+			announceConsent();
+		};
+
+		const acceptAll = () => {
+			const preferences = Object.fromEntries(
+				categoryInputs.map((input) => [input.dataset.consentCategory, true]),
+			) as ConsentPreferences;
+			applyConsent(preferences);
+		};
+
+		const rejectOptional = () => {
+			const preferences = Object.fromEntries(
+				categoryInputs.map((input) => [input.dataset.consentCategory, input.disabled]),
+			) as ConsentPreferences;
+			applyConsent(preferences);
+		};
+
+		const saveSelection = () => {
+			const preferences = Object.fromEntries(
+				categoryInputs.map((input) => [
+					input.dataset.consentCategory,
+					input.disabled || input.checked,
+				]),
+			) as ConsentPreferences;
+			applyConsent(preferences);
+		};
+
+		const openPreferences = () => {
+			categoryInputs.forEach((input) => {
+				const category = input.dataset.consentCategory;
+				input.checked = input.disabled || Boolean(category && currentPreferences[category]);
+			});
+			dialog?.showModal();
+		};
+
+		root.addEventListener('click', (event) => {
+			const target = event.target as HTMLElement;
+			const action = target.closest<HTMLElement>('[data-consent-action]')?.dataset.consentAction;
+
+			if (action === 'accept') acceptAll();
+			if (action === 'reject') rejectOptional();
+			if (action === 'save') saveSelection();
+			if (action === 'customize') openPreferences();
+			if (target.closest('[data-consent-close]')) dialog?.close();
+		});
+
+		settingsButton?.addEventListener('click', openPreferences);
+
+		root.hidden = false;
+		const storedConsent = readConsent();
+		if (storedConsent) {
+			applyConsent(storedConsent.preferences, false);
+		} else {
+			if (banner) banner.hidden = false;
+			if (settingsButton) settingsButton.hidden = true;
+		}
+
+		window.prosperoConsent = {
+			has: (category: string) => Boolean(currentPreferences[category]),
+			openPreferences,
+		};
+	}
+</script>

@@ -16,6 +16,7 @@ import prosperoFooterLogo from '../../public/images/project-logos/logo-horizonta
 import europeanUnionLogo from '../../public/images/eu-logos/EN_Co-fundedbytheEU_RGB_WHITE Outline.png';
 import snsLogo from '../../public/images/eu-logos/6G_sns.png';
 import { socialLinks } from '../config/socialLinks';
+import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
 	title: string;
@@ -27,6 +28,20 @@ const { title } = Astro.props;
 <!doctype html>
 <html lang="en" class="scroll-smooth">
 	<head>
+		<!-- Establish a denied default before any optional Google service can load. -->
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			window.gtag = window.gtag || function () {
+				window.dataLayer.push(arguments);
+			};
+			window.gtag('consent', 'default', {
+				analytics_storage: 'denied',
+				ad_storage: 'denied',
+				ad_user_data: 'denied',
+				ad_personalization: 'denied',
+				wait_for_update: 500,
+			});
+		</script>
 		<meta charset="UTF-8" />
 		<meta name="description" content="PROSPERO Project - Horizon Europe 6G Networks" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -150,6 +165,19 @@ const { title } = Astro.props;
 								</a>
 							))}
 						</div>
+						<div class="flex flex-wrap items-center gap-x-4 gap-y-2 pt-4 text-sm">
+							<a class="text-white/80 underline-offset-4 hover:text-white hover:underline" href="/cookies">
+								Cookie Policy
+							</a>
+							<button
+								id="cookie-settings-button"
+								type="button"
+								class="text-white/80 underline-offset-4 hover:text-white hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+								hidden
+							>
+								Cookie settings
+							</button>
+						</div>
 					</div>
 					<div class="grid grid-cols-1 gap-gutter sm:grid-cols-2 md:ml-auto md:gap-16">
 						<div class="space-y-stack-sm md:w-40">
@@ -186,6 +214,7 @@ const { title } = Astro.props;
 				</div>
 			</div>
 		</footer>
+		<CookieConsent />
 		<script>
 			const mobileMenuButton = document.querySelector<HTMLButtonElement>('#mobile-menu-button');
 			const mobileMenu = document.querySelector<HTMLElement>('#mobile-menu');
