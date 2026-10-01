@@ -130,8 +130,13 @@ import Layout from '../layouts/Layout.astro';
             }
 
             let html = '';
+            const accessTips = {
+                'SEN': 'Sensitive: access limited to the consortium members and the European Commission, under the conditions of the Grant Agreement.',
+                'Public': 'Public: openly available to everyone.'
+            };
             items.forEach(item => {
-                const statusColor = item.status === 'Completed' ? 'bg-eco-surface text-primary' : 'bg-surface-variant text-earth-slate';
+                const tip = accessTips[item.access] || '';
+                const statusColor = item.status === 'Completed' ? 'bg-eco-surface text-primary' : item.status === 'Private' ? 'bg-sovereign-blue/10 text-sovereign-blue' : 'bg-surface-variant text-earth-slate';
                 html += `
                     <tr class="hover:bg-surface transition-colors">
                         <td class="py-4 px-6 font-bold text-sovereign-blue">${item.id}</td>
@@ -146,7 +151,8 @@ import Layout from '../layouts/Layout.astro';
                         </td>
                         <td class="py-4 px-6">
                             <span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
-                                ${item.access}
+                                <span class="${tip ? 'cursor-help underline decoration-dotted underline-offset-4' : ''}" ${tip ? `title="${tip}" tabindex="0"` : ''}>${item.access}</span>
+                                ${item.url ? `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="ml-2 inline-flex items-center gap-1 text-primary font-bold hover:underline">Zenodo <span class="material-symbols-outlined text-[16px]">open_in_new</span></a>` : ''}
                             </span>
                         </td>
                     </tr>
