@@ -3,6 +3,14 @@
   "posters": [],
   "news": [
     {
+      "date": "October 19, 2026",
+      "type": "Press",
+      "title": "Un proyecto científico europeo coordinado en España investiga cómo diseñar redes 6G más sostenibles y resilientes",
+      "summary": "El consorcio de investigación PROSPERO, coordinado por la Universidad Carlos III de Madrid (UC3M), reúne a nueve organizaciones de seis países para transformar la arquitectura de las futuras redes de telecomunicaciones de sexta generación (6G) con el objetivo de conseguir una plataforma abierta e inteligente que reduzca costes y garantice el servicio de comunicaciones móviles ante grandes apagones.",
+      "thumbnail": "/images/media/261019-prospero-uc3m-press-release-thumb.webp",
+      "link": "https://www.uc3m.es/ss/Satellite/UC3MInstitucional/es/Detalle/Comunicacion_C/1371490046715/1371215537949/Un_proyecto_cientifico_europeo_coordinado_en_Espana_investiga_como_disenar_redes_6G_mas_sostenible"
+    },
+    {
       "date": "July 8, 2026",
       "type": "Event",
       "title": "PROSPERO Project Kicks Off in Madrid",
