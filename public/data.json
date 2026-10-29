@@ -59,7 +59,17 @@
     ]
   },
   "zenodo": [],
-  "videos": [],
+  "videos": [
+    {
+      "date": "October 28, 2026",
+      "title": "Meet the PROSPERO team! | Maurizio Fodrini",
+      "description": "Meet Maurizio Fodrini from FiberCop, one of the partners of the PROSPERO project, who brings extensive industry experience in telecommunications research, innovation, and standardization to the development of next-generation networks.",
+      "youtube": "https://www.youtube.com/watch?v=zlHXp9Qnx0A",
+      "thumbnail": "/images/videos/261028-meet-the-team-maurizio-fodrini.webp",
+      "duration": "3:21",
+      "type": "Meet the Team"
+    }
+  ],
   "partners": [
     {"name": "Telefonica", "logo": "/images/partners-logos/telefonica.png"},
     {"name": "NEC", "logo": "/images/partners-logos/nec.png"},
