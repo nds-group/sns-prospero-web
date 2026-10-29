@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { socialLinks } from '../config/socialLinks';
+
+const youtube = socialLinks.find((link) => link.name === 'YouTube');
 ---
 
 <Layout title="Videos - PROSPERO">
@@ -10,18 +13,88 @@ import Layout from '../layouts/Layout.astro';
             <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto">
                 Talks, demos, interviews, and public presentation videos from PROSPERO.
             </p>
+            {youtube && (
+                <a
+                    href={youtube.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="mt-stack-md inline-flex items-center gap-2 rounded bg-primary px-5 py-3 font-label-sm text-label-sm font-bold text-white hover:bg-sovereign-blue transition-colors"
+                >
+                    <span class="material-symbols-outlined text-[20px]" aria-hidden="true">smart_display</span>
+                    Watch all on YouTube
+                </a>
+            )}
         </div>
     </section>
 
     <section class="py-section-padding bg-surface-container-lowest">
-        <div class="max-w-3xl mx-auto px-8">
-            <div class="bg-white rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center">
-                <span class="material-symbols-outlined text-primary text-4xl mb-4">smart_display</span>
-                <h2 class="font-headline-md text-headline-md text-sovereign-blue mb-2">No videos published yet</h2>
-                <p class="font-body-md text-body-md text-on-surface-variant">
-                    Video content will be listed here once public project material is available.
-                </p>
+        <div class="max-w-container-max mx-auto px-8" id="videos-container">
+            <div class="animate-pulse grid sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+                <div class="aspect-video bg-surface rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)]"></div>
+                <div class="aspect-video bg-surface rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)]"></div>
+                <div class="aspect-video bg-surface rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.03)]"></div>
             </div>
         </div>
     </section>
+
+    <script>
+        function emptyState() {
+            return `
+                <div class="max-w-3xl mx-auto bg-white rounded-xl p-8 border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] text-center">
+                    <span class="material-symbols-outlined text-primary text-4xl mb-4">smart_display</span>
+                    <h2 class="font-headline-md text-headline-md text-sovereign-blue mb-2">No videos published yet</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">
+                        Video content will be listed here once public project material is available.
+                    </p>
+                </div>
+            `;
+        }
+
+        async function fetchVideos() {
+            const container = document.getElementById('videos-container');
+            if(!container) return;
+
+            try {
+                const response = await fetch('/data.json');
+                const data = await response.json();
+                const videos = data.videos || [];
+
+                if(videos.length === 0) {
+                    container.innerHTML = emptyState();
+                    return;
+                }
+
+                let html = '<div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-gutter">';
+                videos.forEach(v => {
+                    const meta = [v.date, v.duration].filter(Boolean).join(' · ');
+                    html += `
+                        <a href="${v.youtube}" target="_blank" rel="noopener noreferrer" class="group block bg-white rounded-xl overflow-hidden border border-glass-stroke shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300">
+                            <div class="relative aspect-video bg-sovereign-blue">
+                                ${v.thumbnail ? `<img src="${v.thumbnail}" alt="" loading="lazy" class="h-full w-full object-cover opacity-90 group-hover:opacity-100 transition-opacity" />` : ''}
+                                <span class="absolute inset-0 flex items-center justify-center">
+                                    <span class="flex h-14 w-14 items-center justify-center rounded-full bg-white/90 text-primary shadow-lg group-hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-[32px]" aria-hidden="true">play_arrow</span>
+                                    </span>
+                                </span>
+                                ${v.type ? `<span class="absolute top-3 left-3 text-xs px-3 py-1 rounded-full bg-white/90 text-primary font-bold">${v.type}</span>` : ''}
+                            </div>
+                            <div class="p-6">
+                                ${meta ? `<span class="block text-secondary text-sm font-bold mb-2">${meta}</span>` : ''}
+                                <h2 class="font-headline-md text-[20px] leading-[28px] text-sovereign-blue group-hover:text-primary transition-colors">${v.title}</h2>
+                                ${v.description ? `<p class="font-body-md text-body-md text-on-surface-variant mt-2">${v.description}</p>` : ''}
+                            </div>
+                        </a>
+                    `;
+                });
+                html += '</div>';
+
+                container.innerHTML = html;
+            } catch(e) {
+                console.error(e);
+                container.innerHTML = emptyState();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchVideos);
+    </script>
 </Layout>
